@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/theme.css" rel="stylesheet" />
+    <link href="~/Content/maicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <link href="~/Content/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

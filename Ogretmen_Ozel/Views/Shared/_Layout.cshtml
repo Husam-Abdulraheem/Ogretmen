@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/theme.css" rel="stylesheet" />
+    <link href="~/Content/maicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <link href="~/Content/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="back-to-top"></div>
+    <nav class="navbar navbar-light bg-white navbar-expand-lg sticky">
+        <div class="container-fluid">
+            <div class="me-5 align-items-start">
+                <i class="bi bi-person-circle profileImage"></i>
+                <ul class="profileList ">
+                    <li class="profileA text-dark">@Html.ActionLink("Profile", "Profile", "Profile")</li>
+                    <li class="profileA text-dark">@Html.ActionLink("Log out", "Index", "Home")</li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            @Html.ActionLink("Ana Sayfa", "Index", "Home",null, new { @class = "nav-link" })
+
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Dersler", "Index", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Iletisim", "Index", "Home", null,new { @class = "nav-link", href = "#Iletisim" })
+                        </li>
+                        <li class="nav-item ">
+                            @Html.ActionLink("Giriş Yap", "Index", "Home", new { @class = "nav-link bg-primary p-2 rounded-pill text-light", href = "#Hakkimizda" })
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <div>
+        <footer class="page-footer">
+            <div class="container">
+
+                <h3 id="Hakkimizda" class="d-flex justify-content-center">Hakkimizda</h3>
+                <p>
+                    Go Make Something Awesome
+                    Font Awesome is the internet's icon library and toolkit used by millions of designers, developers, and content creators.
+
+                    Made with  and  in Bentonville, Boston, Chicago, Grand Rapids, Joplin, Kansas City, Seattle, Tampa, and Vergennes.
+                </p>
+                <hr />
+                <h3 id="Iletisim" class="d-flex justify-content-center">Iletisim</h3>
+                <div class="social-media-button d-flex justify-content-center mt-5">
+                    <a href="#" class="me-4"><span class="bi bi-facebook"></span></a>
+                    <a href="#" class="me-4"><span class="bi bi-twitter-x"></span></a>
+                    <a href="#" class="me-4"><span class="bi bi-instagram"></span></a>
+                    <a href="#" class="me-4"><span class="bi bi-youtube"></span></a>
+                </div>
+                <p>&copy; @DateTime.Now.Year - Özel Öğretmen</p>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/theme.js"></script>
+    <script src="~/Content/Stie.js"></script>
+</body>
+</html>

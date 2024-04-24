@@ -1,0 +1,60 @@
+﻿@model List<Ogretmen_Ozel.Models.Teacher>
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<main class="d-flex flex-lg-row align-items-start  justify-content-lg-between flex-column">
+
+
+    <div class="profile card p-0">
+        <i class="bi bi-person-circle profileImageL"></i>
+    <div class="profilehead container-fluid">
+    </div>
+        <div class="ps-4">
+            @{
+                foreach (var item in Model)
+                {
+                    <h1 class="mb-0">@item.User.Name.ToString()</h1>
+                    <p class="  text-secondary">@item.SubjectName.SubjectName</p>
+                }
+            }
+            <p>Awesome is the internet's icon library and <br />toolkit used by millions of designer</p>
+
+            <div>
+                <span class="mb-2 fw-bold">Şehri</span>
+                @Html.TextBox("AdSoyad", "Bartin...", new { @class = "Profile_input p-1" })
+                <span class="mb-2 fw-bold">Sokak</span>
+                @Html.TextBox("AdSoyad", "KYK...", new { @class = "Profile_input p-1" })
+            </div>
+        </div>
+    </div>
+
+        <div class="res-box card-pricing bg-primary text-white w-100">
+            <h5 class="pb-2">Rezervasyon</h5>
+            <div>
+                <div class="res-boxs mb-2 card text-dark p-2">
+                    <p>Lesson name  | <span>Date 12-2-2001</span> | <span>Time 10:30</span></p>
+                    <p>Student Name: Husam...</p>
+                    <p>Address: Bartin kyk...</p>
+                </div>
+                <div class="res-boxs mb-2 card text-dark p-2">
+                    <p>Lesson name  | <span>Date</span> | <span>Time</span></p>
+                    <p>Student Name: Husam...</p>
+                    <p>Address: Bartin kyk...</p>
+                </div>
+                <div class="res-boxs mb-2 card text-dark p-2">
+                    <p>Lesson name  | <span>Date</span> | <span>Time</span></p>
+                    <p>Student Name: Husam...</p>
+                    <p>Address: Bartin kyk...</p>
+                </div>
+            </div>
+
+        </div>
+
+</main>
+
