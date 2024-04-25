@@ -1,21 +1,24 @@
-﻿using System.Web.Mvc;
+﻿using Ogretmen_Ozel.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Ogretmen_Ozel.Controllers
 {
     public class ProfileController : Controller
     {
-        // DataBaseContext db = new DataBaseContext();
+        DataBaseContext db = new DataBaseContext();
         // GET: Profile
         public ActionResult Profile()
         {
 
 
-            //List<Teacher> Teachers;
-            //Teachers = db.TeachersTable.ToList();
-            //Teacher teach = Teachers.First();
+            List<Teacher> Teachers;
+            Teachers = db.TeachersTable.ToList();
+            Teacher teach = Teachers.First();
 
 
-            return View();
+            return View(Teachers);
         }
     }
 }

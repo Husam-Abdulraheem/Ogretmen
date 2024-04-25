@@ -9,44 +9,59 @@
 </head>
 <body>
     <div>
-        @using (Html.BeginForm("SignUp_Teacher", "Account", FormMethod.Post))
+        @using (Html.BeginForm("SignUp_Teacher", "Account"))
         {
             <div>
                 <div>
+                    Ad
                     @Html.TextBoxFor(model => model.User.Name)
                 </div>
                 <div>
+                    SoyAd
                     @Html.TextBoxFor(model => model.User.LastName)
                 </div>
                 <div>
+                    Email
                     @Html.TextBoxFor(model => model.User.Email)
                 </div>
                 <div>
+                    Password
                     @Html.TextBoxFor(model => model.User.Password)
                 </div>
                 <div>
+                    Numara
                     @Html.TextBoxFor(model => model.User.Phone)
                 </div>
                 <br />
             </div>
-            @Html.TextBoxFor(model => model.Address.Country)
-            @Html.TextBoxFor(model => model.Address.City)
-            @Html.TextBoxFor(model => model.Address.Street)
+            <div>
+                Ulke
+                @Html.TextBoxFor(model => model.Address.Country)
+            </div>
+            <div>
+                Sehir
+                @Html.TextBoxFor(model => model.Address.City)
+            </div>
+            <div>
+                Sokak
+                @Html.TextBoxFor(model => model.Address.Street)
+            </div>
 
-            @Html.DropDownListFor(model => model.Id, new SelectList(Model.Subject, "Id", "Id"), "Select Subject")
+            @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Select Subject", new { @class = "form-control" })
 
 
 
 
             <input type="submit" value="submit" />
         }
-
         <div>
             @if (ViewBag.result != null)
             {
                 <div>@ViewBag.result</div>
             }
         </div>
+
+
     </div>
 </body>
 </html>

@@ -11,6 +11,6 @@ namespace Ogretmen_Ozel.Models
         public int StudentID { get; set; }
 
         public User User { get; set; }
-        public List<Reservation> reservation { get; set; }
+        public virtual List<Reservation> reservation { get; set; }
     }
 }

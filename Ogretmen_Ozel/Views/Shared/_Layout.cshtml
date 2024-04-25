@@ -14,9 +14,13 @@
 
 </head>
 <body>
+    @*back to top button*@
     <div class="back-to-top"></div>
+    @*navigation bar*@
     <nav class="navbar navbar-light bg-white navbar-expand-lg sticky">
         <div class="container-fluid">
+
+            @*profile img For Layout*@
             <div class="me-5 align-items-start">
                 <i class="bi bi-person-circle profileImage"></i>
                 <ul class="profileList ">
@@ -40,7 +44,7 @@
 
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Dersler", "Index", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Dersler", "Subjects", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
                             @Html.ActionLink("Iletisim", "Index", "Home", null,new { @class = "nav-link", href = "#Iletisim" })
@@ -55,12 +59,13 @@
             </div>
         </div>
     </nav>
-
+    @*content erea*@
     <div class="container body-content">
         @RenderBody()
     </div>
 
     <div>
+        @*footer*@ 
         <footer class="page-footer">
             <div class="container">
 
