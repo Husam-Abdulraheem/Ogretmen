@@ -1,5 +1,4 @@
 ﻿using Ogretmen_Ozel.Models;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -9,16 +8,19 @@ namespace Ogretmen_Ozel.Controllers
     {
         DataBaseContext db = new DataBaseContext();
         // GET: Profile
-        public ActionResult Profile()
+        public ActionResult Profile(int? userid)
         {
+            Teacher teacher = new Teacher();
 
 
-            List<Teacher> Teachers;
-            Teachers = db.TeachersTable.ToList();
-            Teacher teach = Teachers.First();
+            if (userid != null)
+            {
+                teacher = db.TeachersTable.Where(x => x.Id == userid).FirstOrDefault();
+                ViewBag.userid = userid;
+            }
 
 
-            return View(Teachers);
+            return View(teacher);
         }
     }
 }

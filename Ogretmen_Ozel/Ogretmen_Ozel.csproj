@@ -167,6 +167,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountModels\StudentSignUp.cs" />
     <Compile Include="Models\AccountModels\TeacherSignUp.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
@@ -248,9 +249,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
     <Content Include="Views\Profile\Profile.cshtml" />
-    <Content Include="Views\Home\Subjects.cshtml" />
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\Account\SignUp_Teacher.cshtml" />
+    <Content Include="Views\Account\SignUp_Student.cshtml" />
+    <Content Include="Views\Home\TeachersPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

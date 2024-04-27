@@ -3,21 +3,24 @@ using Ogretmen_Ozel.Models.AccountModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 public class AccountController : Controller
 {
+    DataBaseContext db = new DataBaseContext();
+    //Login for all users
     public ActionResult LogIn()
     {
         return View();
     }
 
 
-    DataBaseContext db = new DataBaseContext();
+    //signUp for teacher
     [HttpGet]
     public ActionResult SignUp_Teacher()
     {
         TeacherSignUp teacherSignUp = new TeacherSignUp();
-        // teacherSignUp.Subject = new Subject();
+
         IEnumerable<SelectListItem> SubjectLists = (from x in db.SubjectTable.ToList()
                                                     select new SelectListItem()
                                                     {
@@ -34,13 +37,13 @@ public class AccountController : Controller
     public ActionResult SignUp_Teacher(TeacherSignUp teacherSignUp)
     {
         Teacher teacher = new Teacher();
-        db.AddressTable.Add(teacherSignUp.Address);
         teacherSignUp.User.IsTeacher = true;
         teacherSignUp.User.Address = teacherSignUp.Address;
+        db.AddressTable.Add(teacherSignUp.Address);
         db.UserTable.Add(teacherSignUp.User);
 
         teacher.User = teacherSignUp.User;
-        teacher.SubjectName = db.SubjectTable.Find(teacherSignUp.Id);
+        teacher.Subject = db.SubjectTable.Find(teacherSignUp.Id);
 
         db.TeachersTable.Add(teacher);
 
@@ -48,11 +51,11 @@ public class AccountController : Controller
         int result = db.SaveChanges();
         if (result > 0)
         {
-            ViewBag.result = "Saved";
+            ViewBag.resultT = "Saved";
         }
         else
         {
-            ViewBag.result = "Do not Save";
+            ViewBag.resultT = "Do not Save";
         }
 
         IEnumerable<SelectListItem> SubjectLists = (from x in db.SubjectTable.ToList()
@@ -65,4 +68,39 @@ public class AccountController : Controller
         ViewData["Subject"] = SubjectLists;
         return View();
     }
+
+
+    //signUp for Student
+    [HttpGet]
+    public ActionResult SignUp_Student()
+    {
+
+        return View();
+    }
+
+    [HttpPost]
+    public ActionResult SignUp_Student(StudentSignUp studentSignUp)
+    {
+        Student student = new Student();
+        studentSignUp.User.IsTeacher = false;
+        studentSignUp.User.Address = studentSignUp.Address;
+        db.AddressTable.Add(studentSignUp.Address);
+        db.UserTable.Add(studentSignUp.User);
+
+        student.User = studentSignUp.User;
+        db.StudentTable.Add(student);
+        int result = db.SaveChanges();
+        if (result > 0)
+        {
+            ViewBag.resultS = "Saved";
+        }
+        else
+        {
+            ViewBag.resultS = "Do not Save";
+        }
+
+
+        return View();
+    }
+
 }

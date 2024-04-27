@@ -14,40 +14,40 @@
             <div>
                 <div>
                     Ad
-                    @Html.TextBoxFor(model => model.User.Name)
+                    @Html.TextBoxFor(model => model.User.Name, new { @required = "required" })
                 </div>
                 <div>
                     SoyAd
-                    @Html.TextBoxFor(model => model.User.LastName)
+                    @Html.TextBoxFor(model => model.User.LastName, new { @required = "required" })
                 </div>
                 <div>
                     Email
-                    @Html.TextBoxFor(model => model.User.Email)
+                    @Html.TextBoxFor(model => model.User.Email, new { @required = "required" })
                 </div>
                 <div>
                     Password
-                    @Html.TextBoxFor(model => model.User.Password)
+                    @Html.TextBoxFor(model => model.User.Password, new { @required = "required" })
                 </div>
                 <div>
                     Numara
-                    @Html.TextBoxFor(model => model.User.Phone)
+                    @Html.TextBoxFor(model => model.User.Phone, new { @required = "required" })
                 </div>
                 <br />
             </div>
             <div>
                 Ulke
-                @Html.TextBoxFor(model => model.Address.Country)
+                @Html.TextBoxFor(model => model.Address.Country, new { @required = "required" })
             </div>
             <div>
                 Sehir
-                @Html.TextBoxFor(model => model.Address.City)
+                @Html.TextBoxFor(model => model.Address.City, new { @required = "required" })
             </div>
             <div>
                 Sokak
-                @Html.TextBoxFor(model => model.Address.Street)
+                @Html.TextBoxFor(model => model.Address.Street, new { @required = "required" })
             </div>
 
-            @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Select Subject", new { @class = "form-control" })
+            @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Select Subject", new { @class = "form-control", required = "required" })
 
 
 
@@ -55,9 +55,9 @@
             <input type="submit" value="submit" />
         }
         <div>
-            @if (ViewBag.result != null)
+            @if (ViewBag.resultT != null)
             {
-                <div>@ViewBag.result</div>
+                <div>@ViewBag.resultT</div>
             }
         </div>
 

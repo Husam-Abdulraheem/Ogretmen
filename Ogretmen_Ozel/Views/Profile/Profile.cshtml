@@ -1,4 +1,4 @@
-﻿@model List<Ogretmen_Ozel.Models.Teacher>
+﻿@model Ogretmen_Ozel.Models.Teacher
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,21 +16,26 @@
     <div class="profilehead container-fluid">
     </div>
         <div class="ps-4">
-            @{
-                foreach (var item in Model)
-                {
-                    <h1 class="mb-0">@item.User.Name.ToString()</h1>
-                    <p class="  text-secondary">@item.SubjectName.SubjectName</p>
-                }
-            }
-            <p>Awesome is the internet's icon library and <br />toolkit used by millions of designer</p>
+            
+           <h1 class="mb-0">@Model.User.Name</h1>
+           <p class="text-secondary">@Model.Subject.SubjectName</p>
+           <p>@Model.Subject.SubjectDescription</p>
 
-            <div class="mb-3">
-                <span class="mb-2 fw-bold">Şehri</span>
-                @Html.TextBox("AdSoyad", "Bartin...", new { @class = "Profile_input p-1" })
-                <span class="mb-2 fw-bold">Sokak</span>
-                @Html.TextBox("AdSoyad", "KYK...", new { @class = "Profile_input p-1" })
-            </div>
+           <div class="mb-3 d-flex">
+               <div class="input-group flex-nowrap mb-1">
+                   <span class="input-group-text bg-primary text-light" id="addon-wrapping">Ülke</span>
+                   @Html.TextBox("Ülke", @Model.User.Address.Country, new { @class = "Profile_input w-50 p-1 bg-primary-subtle" })
+               </div>
+               <div class="input-group flex-nowrap mb-1">
+                   <span class="input-group-text bg-primary text-light" id="addon-wrapping">Şehri</span>
+                   @Html.TextBox("Şehri", @Model.User.Address.City, new { @class = "Profile_input w-50 p-1" })
+               </div>
+               <div class="input-group flex-nowrap mb-1">
+                   <span class="input-group-text bg-primary text-light" id="addon-wrapping">Sokak</span>
+                   @Html.TextBox("Sokak", Model.User.Address.Street, new { @class = "Profile_input w-50 p-1" })
+               </div>
+
+           </div>
         </div>
     </div>
 

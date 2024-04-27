@@ -101,7 +101,7 @@ textarea {
 }
 
 .Profile_input {
-    border: none;
+    border: rgba(100, 95, 136, 0.25) solid 1px;
     border-radius: 6px;
 }
 .Profile_input:focus{
@@ -120,3 +120,4 @@ textarea {
     top: 100px;
     padding: 6px;
 }
+

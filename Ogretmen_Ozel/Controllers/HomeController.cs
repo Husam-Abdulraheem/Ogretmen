@@ -1,25 +1,30 @@
-﻿using System.Web.Mvc;
+﻿using Ogretmen_Ozel.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Ogretmen_Ozel.Controllers
 {
     public class HomeController : Controller
     {
-
+        DataBaseContext db = new DataBaseContext();
         public ActionResult Index()
         {
-
-
-
-
-
             return View();
         }
 
-        public ActionResult Subjects()
+        public ActionResult TeachersPage(int? address)
         {
-            ViewBag.Message = "Your application description pagefffffffffffffffffff.";
+            List<Teacher> vm = new List<Teacher>();
 
-            return View();
+            if (address == 1)
+            {
+                vm = db.TeachersTable.Where(x => x.User.Address.Country == "Türkiye").ToList();
+
+            }
+
+
+            return View(vm);
         }
 
 

@@ -1,0 +1,62 @@
+﻿@model Ogretmen_Ozel.Models.AccountModels.StudentSignUp
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignUp_Teacher</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("SignUp_Student", "Account"))
+        {
+            <div>
+                <div>
+                    Ad
+                    @Html.TextBoxFor(model => model.User.Name)
+                </div>
+                <div>
+                    SoyAd
+                    @Html.TextBoxFor(model => model.User.LastName)
+                </div>
+                <div>
+                    Email
+                    @Html.TextBoxFor(model => model.User.Email)
+                </div>
+                <div>
+                    Password
+                    @Html.TextBoxFor(model => model.User.Password)
+                </div>
+                <div>
+                    Numara
+                    @Html.TextBoxFor(model => model.User.Phone)
+                </div>
+                <br />
+            </div>
+            <div>
+                Ulke
+                @Html.TextBoxFor(model => model.Address.Country)
+            </div>
+            <div>
+                Sehir
+                @Html.TextBoxFor(model => model.Address.City)
+            </div>
+            <div>
+                Sokak
+                @Html.TextBoxFor(model => model.Address.Street)
+            </div>
+
+            <input type="submit" value="submit" />
+        }
+        <div>
+            @if (ViewBag.resultS != null)
+            {
+                <div>@ViewBag.resultS</div>
+            }
+        </div>
+
+
+    </div>
+</body>
+</html>
