@@ -9,6 +9,7 @@ namespace Ogretmen_Ozel.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public string Description { get; set; }
         public virtual User User { get; set; }
         public virtual Subject Subject { get; set; }
         public virtual List<Reservation> Reservations { get; set; }

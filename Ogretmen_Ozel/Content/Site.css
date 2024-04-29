@@ -121,3 +121,16 @@ textarea {
     padding: 6px;
 }
 
+.signup_container {
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25);
+}
+.signupimg{
+    height:350px;
+}
+.input_sginUp:hover {
+    background-color: #ccc !important;
+}
+.link_to_login{
+    padding-top:5PX;
+    font-size: 13px;
+}

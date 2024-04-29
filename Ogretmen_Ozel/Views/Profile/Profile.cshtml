@@ -13,33 +13,42 @@
 
     <div class="profile card p-0">
         <i class="bi bi-person-circle profileImageL"></i>
-    <div class="profilehead container-fluid">
+    <div class="profilehead container-fluid bg-gradient">
     </div>
-        <div class="ps-4">
-            
-           <h1 class="mb-0">@Model.User.Name</h1>
-           <p class="text-secondary">@Model.Subject.SubjectName</p>
-           <p>@Model.Subject.SubjectDescription</p>
+    <div class="p-4">
 
-           <div class="mb-3 d-flex">
-               <div class="input-group flex-nowrap mb-1">
-                   <span class="input-group-text bg-primary text-light" id="addon-wrapping">Ülke</span>
-                   @Html.TextBox("Ülke", @Model.User.Address.Country, new { @class = "Profile_input w-50 p-1 bg-primary-subtle" })
-               </div>
-               <div class="input-group flex-nowrap mb-1">
-                   <span class="input-group-text bg-primary text-light" id="addon-wrapping">Şehri</span>
-                   @Html.TextBox("Şehri", @Model.User.Address.City, new { @class = "Profile_input w-50 p-1" })
-               </div>
-               <div class="input-group flex-nowrap mb-1">
-                   <span class="input-group-text bg-primary text-light" id="addon-wrapping">Sokak</span>
-                   @Html.TextBox("Sokak", Model.User.Address.Street, new { @class = "Profile_input w-50 p-1" })
-               </div>
+        @using (Html.BeginForm())
+        {
+            <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
+            <p class="text-secondary">@Model.Subject.SubjectName</p>
 
-           </div>
-        </div>
+            <div class="form-floating">
+                @Html.TextAreaFor(x => x.Description, new
+                {
+                    @class = "form-control w-50 mb-3 p-1"
+                })
+            </div>
+
+            <div class="mb-3 d-flex">
+                <div class="input-group flex-nowrap mb-1">
+                    <span class="input-group-text bg-primary text-light bg-gradient" id="addon-wrapping">Ülke</span>
+                    @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-50 p-1" })
+                </div>
+                <div class="input-group flex-nowrap mb-1">
+                    <span class="input-group-text bg-primary text-light bg-gradient" id="addon-wrapping">Şehri</span>
+                    @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-50 p-1" })
+                </div>
+                <div class="input-group flex-nowrap mb-1">
+                    <span class="input-group-text bg-primary text-light bg-gradient" id="addon-wrapping">Sokak</span>
+                    @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-50 p-1" })
+                </div>
+            </div>
+            <input class="btn btn-primary p-2 bg-gradient" type="submit" value="Bilgilerinizi düzenleyin" />
+        }
+    </div>
     </div>
 
-        <div class="res-box card-pricing bg-primary text-white w-100">
+        <div class="res-box card-pricing bg-primary text-white w-100 bg-gradient">
             <h5 class="pb-2">Rezervasyon</h5>
             <div>
                 <div class="res-boxs mb-2 card text-dark p-2">

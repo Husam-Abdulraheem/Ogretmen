@@ -10,20 +10,31 @@ namespace Ogretmen_Ozel.Controllers
         DataBaseContext db = new DataBaseContext();
         public ActionResult Index()
         {
-            return View();
+            List<Subject> listSubject = new List<Subject>();
+            listSubject = db.SubjectTable.ToList();
+
+            return View(listSubject);
         }
 
-        public ActionResult TeachersPage(int? address)
+        public ActionResult TeachersPage(string address)
         {
             List<Teacher> vm = new List<Teacher>();
 
-            if (address == 1)
+            switch (address)
             {
-                vm = db.TeachersTable.Where(x => x.User.Address.Country == "Türkiye").ToList();
-
+                case "Country":
+                    vm = db.TeachersTable.Where(x => x.User.Address.Country == "Türkiye").ToList();
+                    break;
+                case "City":
+                    vm = db.TeachersTable.Where(x => x.User.Address.City == "Bartin").ToList();
+                    break;
+                case "Street":
+                    vm = db.TeachersTable.Where(x => x.User.Address.Street == "KYK").ToList();
+                    break;
+                default:
+                    vm = db.TeachersTable.ToList();
+                    break;
             }
-
-
             return View(vm);
         }
 

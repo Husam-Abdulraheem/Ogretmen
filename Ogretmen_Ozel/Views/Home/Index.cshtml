@@ -1,4 +1,4 @@
-﻿    @model Ogretmen_Ozel.Models.Address
+﻿    @model List<Ogretmen_Ozel.Models.Subject>
 @{
     ViewBag.Title = "Home Page";
 
@@ -26,35 +26,26 @@
     <div class="page-section">
         <div class="container">
             <hr />
-            <div class="row my-5">
-                <div class="col-lg-4 py-3">
-                    <div class="card-blog">
-                        <div class="header">
-                            <div class="post-thumb">
-                                <img src="../assets/img/blog/blog-1.jpg" alt="">
+                <div class="row my-5">
+            @foreach (var s in Model)
+            {
+                    <div class="col-lg-4 py-3">
+                        <div class="card-blog">
+                            <div class="header">
+                                <div class="post-thumb img-fluid">
+                                    <img class="w-100 h-100" src="https://lh3.google.com/u/0/d/10JJ82lCm3qomwkmLSf6pOgUQpirXBxDZ=w1920-h897-iv1" alt="">
+                                </div>
+                            </div>
+                            <div class="body">
+                                <h5 class="post-title">
+                                @Html.ActionLink(s.SubjectName,"TeachersPage",null,null)
+                                </h5>
+                                <div class="post-date">@s.SubjectDescription</div>
                             </div>
                         </div>
-                        <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">Source of Content Inspiration</a></h5>
-                            <div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
-                        </div>
                     </div>
+            }
                 </div>
-
-                <div class="col-lg-4 py-3">
-                    <div class="card-blog">
-                        <div class="header">
-                            <div class="post-thumb">
-                                <img src="../assets/img/blog/blog-2.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">Source of Content Inspiration</a></h5>
-                            <div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>

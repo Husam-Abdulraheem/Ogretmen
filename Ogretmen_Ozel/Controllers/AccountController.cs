@@ -13,6 +13,23 @@ public class AccountController : Controller
     {
         return View();
     }
+    [HttpPost]
+    public ActionResult LogIn(User user)
+    {
+        User loginUser = db.UserTable.Where(x => x.Email.Equals(user.Email) && x.Password.Equals(user.Password)).FirstOrDefault();
+
+        if (loginUser != null)
+        {
+            Session["SessionUser"] = user.Name;
+            return RedirectToAction("Index", "Home");
+        }
+        else
+        {
+            ViewBag.login = "Hata oldu";
+            return View();
+        }
+
+    }
 
 
     //signUp for teacher
@@ -51,7 +68,7 @@ public class AccountController : Controller
         int result = db.SaveChanges();
         if (result > 0)
         {
-            ViewBag.resultT = "Saved";
+            return RedirectToAction("Index", "Home");
         }
         else
         {
@@ -92,7 +109,7 @@ public class AccountController : Controller
         int result = db.SaveChanges();
         if (result > 0)
         {
-            ViewBag.resultS = "Saved";
+            return RedirectToAction("Index", "Home");
         }
         else
         {

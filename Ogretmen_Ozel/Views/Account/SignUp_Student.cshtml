@@ -8,55 +8,53 @@
     <title>SignUp_Teacher</title>
 </head>
 <body>
-    <div>
-        @using (Html.BeginForm("SignUp_Student", "Account"))
-        {
-            <div>
-                <div>
-                    Ad
-                    @Html.TextBoxFor(model => model.User.Name)
-                </div>
-                <div>
-                    SoyAd
-                    @Html.TextBoxFor(model => model.User.LastName)
-                </div>
-                <div>
-                    Email
-                    @Html.TextBoxFor(model => model.User.Email)
-                </div>
-                <div>
-                    Password
-                    @Html.TextBoxFor(model => model.User.Password)
-                </div>
-                <div>
-                    Numara
-                    @Html.TextBoxFor(model => model.User.Phone)
-                </div>
-                <br />
-            </div>
-            <div>
-                Ulke
-                @Html.TextBoxFor(model => model.Address.Country)
-            </div>
-            <div>
-                Sehir
-                @Html.TextBoxFor(model => model.Address.City)
-            </div>
-            <div>
-                Sokak
-                @Html.TextBoxFor(model => model.Address.Street)
-            </div>
-
-            <input type="submit" value="submit" />
-        }
-        <div>
-            @if (ViewBag.resultS != null)
+    <div class="d-flex flex-column justify-content-center mb-5">
+        <h1 class="mb-5 text-primary fw-bold">Öğrenci olarak yeni bir hesap açın</h1>
+        <div class="signup_container d-flex border-1 p-3 bg-primary rounded bg-gradient text-light">
+            @using (Html.BeginForm("SignUp_Student", "Account", FormMethod.Post, new { @class = "d-flex justify-content-center w-50" }))
             {
-                <div>@ViewBag.resultS</div>
+                <div class="row p-2 w-75">
+                    <div class="m-2 col p-2">
+                        @Html.TextBoxFor(model => model.User.Name, new { @required = "required", type = "text", @class = "form-control", placeholder = "Ad" })
+                    </div>
+                    <div class="m-2 col p-2 pe-0">
+                        @Html.TextBoxFor(model => model.User.LastName, new { @required = "required", type = "text", @class = "form-control", placeholder = "SoyAd" })
+                    </div>
+                    <div class="m-2 row">
+                        @Html.TextBoxFor(model => model.User.Email, new { @required = "required", type = "email", @class = "form-control", placeholder = "Email" })
+                    </div>
+                    <div class="m-2 row">
+                        @Html.TextBoxFor(model => model.User.Password, new { @required = "required", type = "password", @class = "form-control", placeholder = "Password" })
+                    </div>
+
+                    <div class="m-2 row">
+                        @Html.TextBoxFor(model => model.User.Phone, new { @required = "required", type = "text", @class = "form-control", placeholder = "Numara" })
+                    </div>
+                    <div class="m-2 col">
+                        @Html.TextBoxFor(model => model.Address.Country, new { @required = "required", type = "text", @class = "form-control", placeholder = "Ülke" })
+                    </div>
+                    <div class="m-2 col pe-0">
+                        @Html.TextBoxFor(model => model.Address.City, new { @required = "required", type = "text", @class = "form-control", placeholder = "Sehir" })
+                    </div>
+                    <div class="m-2 row">
+                        @Html.TextBoxFor(model => model.Address.Street, new { @required = "required", type = "text", @class = "form-control", placeholder = "Sokak" })
+                    </div>
+                        <input class="btn btn-light text-primary ms-3 input_sginUp" type="submit" value="Gönder" />
+                    <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn")</div>
+                </div>
+
+
             }
+            <img class="p-5 signupimg" src="~/Content/photos/signup.png" alt="img" />
+            <div>
+                @if (ViewBag.resultT != null)
+                {
+                    <div>@ViewBag.resultT</div>
+                }
+            </div>
+
+
         </div>
-
-
     </div>
 </body>
 </html>

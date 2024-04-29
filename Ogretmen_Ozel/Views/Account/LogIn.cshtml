@@ -1,9 +1,5 @@
 ﻿@model Ogretmen_Ozel.Models.User
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -12,74 +8,39 @@
     <title>LogIn</title>
 </head>
 <body>
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>User</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.IsTeacher, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.IsTeacher)
-                        @Html.ValidationMessageFor(model => model.IsTeacher, "", new { @class = "text-danger" })
+    <div class=" mb-5">
+        <h1 class="mb-5 text-primary fw-bold">Tekrar Hoşgeldiniz</h1>
+        <div class="d-flex align-items-center justify-content-center border-1 p-3 bg-primary rounded bg-gradient text-light">
+            <img class="p-5 signupimg" src="~/Content/photos/signup.png" alt="img" />
+            @using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
+            {
+                <div class="d-flex flex-column align-items-center justify-content-center p-2">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-primary border-0 bg-gradient" for="Email"><i class="bi bi-envelope-open-fill text-light"></i></span>
+                        @Html.TextBoxFor(model => model.Email, new { @required = "required", type = "email", @class = "form-control", placeholder = "Email", id = "Email" })
                     </div>
+
+                    <div class="m-2 input-group">
+                        <span class="input-group-text bg-primary border-0 bg-gradient" for="Password"><i class="bi bi-key-fill text-light"></i></span>
+                        @Html.TextBoxFor(model => model.Password, new { @required = "required", type = "password", @class = "form-control", placeholder = "Password", id = "Password" })
+                    </div>
+                    <input class="btn btn-light text-primary w-50 input_sginUp mt-2" type="submit" value="Gönder" />
+                    <div class="link_to_login">Hesabım Yok? Giriş Yap @Html.ActionLink("Oğretmen", "SignUp_Teacher") & @Html.ActionLink("Öğrenci", "SignUp_Student")</div>
                 </div>
+
+
+            }
+
+            <div>
+                @if (ViewBag.resultT != null)
+                {
+                    <div>@ViewBag.resultT</div>
+                }
             </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
+
+
         </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
 </body>
 </html>
