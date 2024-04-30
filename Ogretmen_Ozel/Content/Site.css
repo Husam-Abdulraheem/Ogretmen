@@ -99,11 +99,15 @@ textarea {
     padding:5px;
     list-style:none;
 }
-
-.Profile_input {
-    border: rgba(100, 95, 136, 0.25) solid 1px;
-    border-radius: 6px;
+.editIcon {
+    position: relative;
+    right: 15px;
 }
+.Profile_input {
+    border: none;
+
+}
+
 .Profile_input:focus{
     outline: none;
 }

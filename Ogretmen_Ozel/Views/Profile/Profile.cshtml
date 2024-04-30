@@ -22,49 +22,64 @@
             <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
             <p class="text-secondary">@Model.Subject.SubjectName</p>
 
-            <div class="form-floating">
+            <div class="">
                 @Html.TextAreaFor(x => x.Description, new
-                {
-                    @class = "form-control w-50 mb-3 p-1"
-                })
+           {
+               @class = "form-control h-100 mb-3 p-1 "
+                    ,
+               placeholder = "Tanım"
+           })
             </div>
 
-            <div class="mb-3 d-flex">
-                <div class="input-group flex-nowrap mb-1">
-                    <span class="input-group-text bg-primary text-light bg-gradient" id="addon-wrapping">Ülke</span>
-                    @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-50 p-1" })
+            <div class="mb-3 d-flex flex-column">
+                <div class=" mb-1 w-100 d-flex align-items-center">
+                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
+                    @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-25" })
+                    <i class="bi bi-pencil-square editIcon"></i>
                 </div>
-                <div class="input-group flex-nowrap mb-1">
-                    <span class="input-group-text bg-primary text-light bg-gradient" id="addon-wrapping">Şehri</span>
-                    @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-50 p-1" })
+
+                <div class=" mb-1 w-100 d-flex align-items-center">
+                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
+                    @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-25" })
+                    <i class="bi bi-pencil-square editIcon"></i>
                 </div>
-                <div class="input-group flex-nowrap mb-1">
-                    <span class="input-group-text bg-primary text-light bg-gradient" id="addon-wrapping">Sokak</span>
-                    @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-50 p-1" })
+
+
+                <div class=" mb-2 w-100 d-flex align-items-center">
+                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
+                    @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-25" })
+                    <i class="bi bi-pencil-square editIcon"></i>
                 </div>
+
             </div>
             <input class="btn btn-primary p-2 bg-gradient" type="submit" value="Bilgilerinizi düzenleyin" />
         }
     </div>
     </div>
 
-        <div class="res-box card-pricing bg-primary text-white w-100 bg-gradient">
-            <h5 class="pb-2">Rezervasyon</h5>
+        <div class="res-box card-pricing bg-primary text-white w-100 bg-gradient shadow">
+            <h5 class="pb-2 fw-bold">Rezervasyonlar</h5>
             <div>
-                <div class="res-boxs mb-2 card text-dark p-2">
-                    <p>Lesson name  | <span>Date 12-2-2001</span> | <span>Time 10:30</span></p>
-                    <p>Student Name: Husam...</p>
-                    <p>Address: Bartin kyk...</p>
-                </div>
-                <div class="res-boxs mb-2 card text-dark p-2">
-                    <p>Lesson name  | <span>Date</span> | <span>Time</span></p>
-                    <p>Student Name: Husam...</p>
-                    <p>Address: Bartin kyk...</p>
-                </div>
-                <div class="res-boxs mb-2 card text-dark p-2">
-                    <p>Lesson name  | <span>Date</span> | <span>Time</span></p>
-                    <p>Student Name: Husam...</p>
-                    <p>Address: Bartin kyk...</p>
+                <div class="res-boxs mb-2 text-dark card p-3">
+                    <p class="border-bottom">
+                    <i class="bi bi-person-fill fs-5 pe-1"></i> 
+                    <b>Öğrenci adı:</b> <span class="badge bg-primary">Husam</span>
+                    </p>
+
+                    <p class="border-bottom">
+                    <i class="bi bi-book-fill fs-5 pe-1"></i> 
+                        <b>Ders adı: </b><span class="badge bg-primary">Math</span>
+                    </p>
+
+                    <p class="border-bottom">
+                    <i class="bi bi-calendar-date-fill fs-5 pe-2"></i>
+                        <b>Tarih: </b><span class="badge bg-primary">MM/dd/yyyy HH:mm</span>
+                    </p>
+
+                    <p class="border-bottom">
+                    <i class="bi bi-pin-map-fill fs-5 pe-2"></i>
+                        <b>Address: </b><span class="badge bg-primary">Bartin</span>
+                    </p>
                 </div>
             </div>
 

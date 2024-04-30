@@ -11,6 +11,7 @@ public class AccountController : Controller
     //Login for all users
     public ActionResult LogIn()
     {
+        //string userLogin = se
         return View();
     }
     [HttpPost]
