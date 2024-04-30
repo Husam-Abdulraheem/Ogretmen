@@ -13,45 +13,51 @@
         <div class="signup_container d-flex border-1 p-3 bg-primary rounded bg-gradient text-light">
             @using (Html.BeginForm("SignUp_Student", "Account", FormMethod.Post, new { @class = "d-flex justify-content-center w-50" }))
             {
-                <div class="row p-2 w-75">
+                <div class="row p-2 w-75 justify-content-center">
                     <div class="m-2 col p-2">
-                        @Html.TextBoxFor(model => model.User.Name, new { @required = "required", type = "text", @class = "form-control", placeholder = "Ad" })
+                        @Html.TextBoxFor(model => model.User.Name, new { type = "text", @class = "form-control", placeholder = "Ad" })
                     </div>
                     <div class="m-2 col p-2 pe-0">
-                        @Html.TextBoxFor(model => model.User.LastName, new { @required = "required", type = "text", @class = "form-control", placeholder = "SoyAd" })
+                        @Html.TextBoxFor(model => model.User.LastName, new { type = "text", @class = "form-control", placeholder = "SoyAd" })
                     </div>
                     <div class="m-2 row">
-                        @Html.TextBoxFor(model => model.User.Email, new { @required = "required", type = "email", @class = "form-control", placeholder = "Email" })
+                        @Html.TextBoxFor(model => model.User.Email, new { type = "email", @class = "form-control", placeholder = "Email" })
                     </div>
                     <div class="m-2 row">
-                        @Html.TextBoxFor(model => model.User.Password, new { @required = "required", type = "password", @class = "form-control", placeholder = "Password" })
+                        @Html.TextBoxFor(model => model.User.Password, new { type = "password", @class = "form-control", placeholder = "Password" })
                     </div>
 
                     <div class="m-2 row">
-                        @Html.TextBoxFor(model => model.User.Phone, new { @required = "required", type = "text", @class = "form-control", placeholder = "Numara" })
+                        @Html.TextBoxFor(model => model.User.Phone, new { type = "text", @class = "form-control", placeholder = "Numara" })
                     </div>
-                    <div class="m-2 col">
-                        @Html.TextBoxFor(model => model.Address.Country, new { @required = "required", type = "text", @class = "form-control", placeholder = "Ülke" })
+                    <div class="m-2 ms-0 col">
+                        @Html.TextBoxFor(model => model.Address.Country, new { type = "text", @class = "form-control", placeholder = "Ülke" })
                     </div>
                     <div class="m-2 col pe-0">
-                        @Html.TextBoxFor(model => model.Address.City, new { @required = "required", type = "text", @class = "form-control", placeholder = "Sehir" })
+                        @Html.TextBoxFor(model => model.Address.City, new { type = "text", @class = "form-control", placeholder = "Sehir" })
                     </div>
                     <div class="m-2 row">
-                        @Html.TextBoxFor(model => model.Address.Street, new { @required = "required", type = "text", @class = "form-control", placeholder = "Sokak" })
+                        @Html.TextBoxFor(model => model.Address.Street, new { type = "text", @class = "form-control", placeholder = "Sokak" })
                     </div>
-                        <input class="btn btn-light text-primary ms-3 input_sginUp" type="submit" value="Gönder" />
+                    <input class="btn btn-light text-primary ms-3 w-50 input_sginUp" type="submit" value="Gönder" />
                     <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn")</div>
+
+                        @if (ViewBag.resultS != null)
+                        {
+                            <div class="alert alert-danger d-flex align-items-center">
+                                <i class="bi bi-exclamation-triangle-fill text-danger pe-2"></i>
+                                <div>
+                                    @ViewBag.resultS
+                                </div>
+                            </div>
+                        }
+
                 </div>
 
 
             }
             <img class="p-5 signupimg" src="~/Content/photos/signup.png" alt="img" />
-            <div>
-                @if (ViewBag.resultT != null)
-                {
-                    <div>@ViewBag.resultT</div>
-                }
-            </div>
+            
 
 
         </div>

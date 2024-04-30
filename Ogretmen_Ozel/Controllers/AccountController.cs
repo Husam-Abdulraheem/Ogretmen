@@ -53,27 +53,25 @@ public class AccountController : Controller
     [HttpPost]
     public ActionResult SignUp_Teacher(TeacherSignUp teacherSignUp)
     {
-        Teacher teacher = new Teacher();
-        teacherSignUp.User.IsTeacher = true;
-        teacherSignUp.User.Address = teacherSignUp.Address;
-        db.AddressTable.Add(teacherSignUp.Address);
-        db.UserTable.Add(teacherSignUp.User);
-
-        teacher.User = teacherSignUp.User;
-        teacher.Subject = db.SubjectTable.Find(teacherSignUp.Id);
-
-        db.TeachersTable.Add(teacher);
-
-
-        int result = db.SaveChanges();
-        if (result > 0)
+        if (ModelState.IsValid)
         {
-            return RedirectToAction("Index", "Home");
+            Teacher teacher = new Teacher();
+            teacherSignUp.User.IsTeacher = true;
+            teacherSignUp.User.Address = teacherSignUp.Address;
+            db.AddressTable.Add(teacherSignUp.Address);
+            db.UserTable.Add(teacherSignUp.User);
+
+            teacher.User = teacherSignUp.User;
+            teacher.Subject = db.SubjectTable.Find(teacherSignUp.Id);
+
+            db.TeachersTable.Add(teacher);
+            int result = db.SaveChanges();
+            if (result > 0)
+                return RedirectToAction("Index", "Home");
         }
-        else
-        {
-            ViewBag.resultT = "Do not Save";
-        }
+
+
+
 
         IEnumerable<SelectListItem> SubjectLists = (from x in db.SubjectTable.ToList()
                                                     select new SelectListItem()
@@ -82,6 +80,7 @@ public class AccountController : Controller
                                                         Value = x.Id.ToString()
                                                     }).ToList();
 
+        ViewBag.resultT = "Giriş yaparken bir hata oluştu";
         ViewData["Subject"] = SubjectLists;
         return View();
     }
@@ -98,25 +97,24 @@ public class AccountController : Controller
     [HttpPost]
     public ActionResult SignUp_Student(StudentSignUp studentSignUp)
     {
-        Student student = new Student();
-        studentSignUp.User.IsTeacher = false;
-        studentSignUp.User.Address = studentSignUp.Address;
-        db.AddressTable.Add(studentSignUp.Address);
-        db.UserTable.Add(studentSignUp.User);
-
-        student.User = studentSignUp.User;
-        db.StudentTable.Add(student);
-        int result = db.SaveChanges();
-        if (result > 0)
+        if (ModelState.IsValid)
         {
-            return RedirectToAction("Index", "Home");
-        }
-        else
-        {
-            ViewBag.resultS = "Do not Save";
-        }
+            Student student = new Student();
+            studentSignUp.User.IsTeacher = false;
+            studentSignUp.User.Address = studentSignUp.Address;
+            db.AddressTable.Add(studentSignUp.Address);
+            db.UserTable.Add(studentSignUp.User);
 
+            student.User = studentSignUp.User;
+            db.StudentTable.Add(student);
+            int result = db.SaveChanges();
 
+            if (result > 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        ViewBag.resultS = "Giriş yaparken bir hata oluştu";
         return View();
     }
 

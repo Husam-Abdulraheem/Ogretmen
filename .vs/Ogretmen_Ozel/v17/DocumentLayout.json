@@ -3,52 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|c:\\users\\ht932\\source\\repos\\ogretmen\\ogretmen_ozel\\models\\accountmodels\\teachersignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\models\\accountmodels\\teachersignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|c:\\users\\ht932\\source\\repos\\ogretmen\\ogretmen_ozel\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|c:\\users\\ht932\\source\\repos\\ogretmen\\ogretmen_ozel\\views\\account\\signup_student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\account\\signup_student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|c:\\users\\ht932\\source\\repos\\ogretmen\\ogretmen_ozel\\views\\account\\signup_teacher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\account\\signup_teacher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\account\\signup_teacher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|c:\\users\\ht932\\source\\repos\\ogretmen\\ogretmen_ozel\\models\\accountmodels\\studentsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\models\\accountmodels\\studentsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\account\\signup_student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\account\\signup_student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\models\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\home\\teacherspage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -57,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\views\\profile\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\profile\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\ht932\\source\\repos\\Ogretmen\\ogretmen_ozel\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,33 +78,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TeacherSignUp.cs",
+              "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\AccountModels\\TeacherSignUp.cs",
+              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Models\\AccountModels\\TeacherSignUp.cs",
+              "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\AccountModels\\TeacherSignUp.cs",
+              "RelativeToolTip": "Ogretmen_Ozel\\Models\\AccountModels\\TeacherSignUp.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:01:46.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "SignUp_Student.cshtml",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Account\\SignUp_Student.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Account\\SignUp_Student.cshtml",
               "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Account\\SignUp_Student.cshtml",
               "RelativeToolTip": "Ogretmen_Ozel\\Views\\Account\\SignUp_Student.cshtml",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAAAsAAAA1AAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABEAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-29T21:27:18.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StudentSignUp.cs",
-              "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\AccountModels\\StudentSignUp.cs",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Models\\AccountModels\\StudentSignUp.cs",
-              "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\AccountModels\\StudentSignUp.cs",
-              "RelativeToolTip": "Ogretmen_Ozel\\Models\\AccountModels\\StudentSignUp.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T21:27:11.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Shared\\_Layout.cshtml",
@@ -124,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Teacher.cs",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\Teacher.cs",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Models\\Teacher.cs",
@@ -136,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "Subject.cs",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\Subject.cs",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Models\\Subject.cs",
@@ -144,19 +136,8 @@
               "RelativeToolTip": "Ogretmen_Ozel\\Models\\Subject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T17:49:33.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DataBaseContext.cs",
-              "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\DataBaseContext.cs",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Models\\DataBaseContext.cs",
-              "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Models\\DataBaseContext.cs",
-              "RelativeToolTip": "Ogretmen_Ozel\\Models\\DataBaseContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T17:49:25.303Z"
+              "WhenOpened": "2024-04-29T17:49:33.941Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -166,66 +147,53 @@
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAAAG8AAAA1AAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAAAFIAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T17:48:59.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "LogIn.cshtml",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Account\\LogIn.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Account\\LogIn.cshtml",
               "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Account\\LogIn.cshtml",
               "RelativeToolTip": "Ogretmen_Ozel\\Views\\Account\\LogIn.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAACQAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-29T17:48:12.847Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "SignUp_Teacher.cshtml",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Account\\SignUp_Teacher.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Account\\SignUp_Teacher.cshtml",
               "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Account\\SignUp_Teacher.cshtml",
               "RelativeToolTip": "Ogretmen_Ozel\\Views\\Account\\SignUp_Teacher.cshtml",
-              "ViewState": "AQIAACgAAAAAAAAAAAAqwEEAAAAAAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACcAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-29T09:44:26.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Site.css",
-              "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Content\\Site.css",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Content\\Site.css",
-              "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Content\\Site.css",
-              "RelativeToolTip": "Ogretmen_Ozel\\Content\\Site.css",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAAAIUAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-04-29T14:40:42.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Ogretmen_Ozel\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAKAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-27T21:55:09.923Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 6,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\ProfileController.cs",
@@ -233,11 +201,12 @@
               "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\ProfileController.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACUAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T14:25:19.079Z"
+              "WhenOpened": "2024-04-27T14:25:19.079Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
@@ -249,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "TeachersPage.cshtml",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Views\\Home\\TeachersPage.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Home\\TeachersPage.cshtml",
@@ -261,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\ht932\\source\\repos\\Ogretmen\\Ogretmen_Ozel\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\HomeController.cs",
@@ -269,7 +238,8 @@
               "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T11:48:59.968Z"
+              "WhenOpened": "2024-04-27T11:48:59.968Z",
+              "EditorCaption": ""
             }
           ]
         }
