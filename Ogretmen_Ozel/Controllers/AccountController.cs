@@ -21,7 +21,7 @@ public class AccountController : Controller
 
         if (loginUser != null)
         {
-            //Hello i'm ali
+
             Session["SessionUser"] = user.Name;
             return RedirectToAction("Index", "Home");
         }
