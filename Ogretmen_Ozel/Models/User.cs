@@ -15,7 +15,7 @@ namespace Ogretmen_Ozel.Models
         [StringLength(40), Required]
         public string LastName { get; set; }
 
-        [StringLength(30), Required, Index(IsUnique = true)]
+        [StringLength(30), Required]
         public string Email { get; set; }
 
         [Required]

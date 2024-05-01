@@ -3,7 +3,6 @@
     ViewBag.Title = "Profile";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    
 
 }
 <head>
@@ -17,83 +16,44 @@
     <div class="profilehead container-fluid bg-gradient">
     </div>
     <div class="p-4">
-        @if ((int)Session["Id"] == Model.Id)
+
+        @using (Html.BeginForm())
         {
-            using (Html.BeginForm())
-            {
-                <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
-                <p class="text-secondary">@Model.Subject.SubjectName</p>
+            <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
+            <p class="text-secondary">@Model.Subject.SubjectName</p>
 
-                <div class="">
-                    @Html.TextAreaFor(x => x.Description, new
-                    {
-                        @class = "form-control h-100 mb-3 p-1 "
-                        ,
-                        placeholder = "Tanım"
-               })
+            <div class="">
+                @Html.TextAreaFor(x => x.Description, new
+           {
+               @class = "form-control h-100 mb-3 p-1 "
+                    ,
+               placeholder = "Tanım"
+           })
+            </div>
+
+            <div class="mb-3 d-flex flex-column">
+                <div class=" mb-1 w-100 d-flex align-items-center">
+                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
+                    @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-25" })
+                    <i class="bi bi-pencil-square editIcon"></i>
                 </div>
 
-                <div class="mb-3 d-flex flex-column">
-                    <div class=" mb-1 w-100 d-flex align-items-center">
-                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
-                        @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-25" })
-                        <i class="bi bi-pencil-square editIcon"></i>
-                    </div>
-
-                    <div class=" mb-1 w-100 d-flex align-items-center">
-                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
-                        @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-25" })
-                        <i class="bi bi-pencil-square editIcon"></i>
-                    </div>
-
-
-                    <div class=" mb-2 w-100 d-flex align-items-center">
-                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
-                        @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-25" })
-                        <i class="bi bi-pencil-square editIcon"></i>
-                    </div>
-
+                <div class=" mb-1 w-100 d-flex align-items-center">
+                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
+                    @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-25" })
+                    <i class="bi bi-pencil-square editIcon"></i>
                 </div>
-                <input class="btn btn-primary p-2 bg-gradient" type="submit" value="Bilgilerinizi düzenleyin" />
-            }
+
+
+                <div class=" mb-2 w-100 d-flex align-items-center">
+                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
+                    @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-25" })
+                    <i class="bi bi-pencil-square editIcon"></i>
+                </div>
+
+            </div>
+            <input class="btn btn-primary p-2 bg-gradient" type="submit" value="Bilgilerinizi düzenleyin" />
         }
-        else
-        {
-          
-                <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
-                <p class="text-secondary">@Model.Subject.SubjectName</p>
-
-                <div class="">
-                    <p>Description:</p>
-                    <p class=" h-100 mb-3 p-1">@Model.Description</p>
-                </div>
-
-                <div class="mb-3 d-flex flex-column">
-                    <div class=" mb-1 w-100 d-flex align-items-center">
-                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
-                        <div class="Profile_input w-25"> @Model.User.Address.Country </div>
-                       
-                       
-                    </div>
-
-                    <div class=" mb-1 w-100 d-flex align-items-center">
-                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
-                        <div class="Profile_input w-25"> @Model.User.Address.City </div>
-                        
-                    </div>
-
-
-                    <div class=" mb-2 w-100 d-flex align-items-center">
-                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
-                        <div class="Profile_input w-25"> @Model.User.Address.Street </div>
-                       
-                    </div>
-
-                </div>
-               
-            
-        }
-
     </div>
     </div>
 

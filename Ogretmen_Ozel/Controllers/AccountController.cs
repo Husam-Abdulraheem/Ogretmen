@@ -3,18 +3,15 @@ using Ogretmen_Ozel.Models.AccountModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using System.Web.Security;
 using System.Web.UI.WebControls;
 
 public class AccountController : Controller
 {
     DataBaseContext db = new DataBaseContext();
     //Login for all users
-
-
-
     public ActionResult LogIn()
     {
+        //string userLogin = se
         return View();
     }
     [HttpPost]
@@ -23,30 +20,19 @@ public class AccountController : Controller
         User loginUser = db.UserTable.Where(x => x.Email.Equals(user.Email) && x.Password.Equals(user.Password)).FirstOrDefault();
 
         if (loginUser != null)
-        {
-            Session["isLoging"] = true;
-            Session["AddressCountry"] = loginUser.Address.Country;
-            Session["AddressCity"] = loginUser.Address.City;
-            Session["AddressStreet"] = loginUser.Address.Street;
-            if (loginUser.IsTeacher == true)
-            {
-                Session["id"] = loginUser.Id;
-
-                FormsAuthentication.SetAuthCookie(loginUser.Name, true);
-                return RedirectToAction("Profile", "Profile", new { userId = loginUser.Id });
-
-            }
-
-            else
-                return RedirectToAction("Index", "Home");
+        {/// Ali
+            Session["SessionUser"] = user.Name;
+            return RedirectToAction("Index", "Home");
         }
-        else
+
         {
             ViewBag.login = "Hata oldu";
             return View();
         }
 
     }
+
+
     //signUp for teacher
     [HttpGet]
     public ActionResult SignUp_Teacher()
@@ -70,38 +56,22 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            User UserUnique = db.UserTable.Where(x => x.Email == teacherSignUp.User.Email).FirstOrDefault();
-            if (UserUnique == null)
-            {
-                Teacher teacher = new Teacher();
-                teacherSignUp.User.IsTeacher = true;
-                teacherSignUp.User.Address = teacherSignUp.Address;
-                db.AddressTable.Add(teacherSignUp.Address);
-                db.UserTable.Add(teacherSignUp.User);
+            Teacher teacher = new Teacher();
+            teacherSignUp.User.IsTeacher = true;
+            teacherSignUp.User.Address = teacherSignUp.Address;
+            db.AddressTable.Add(teacherSignUp.Address);
+            db.UserTable.Add(teacherSignUp.User);
 
-                teacher.User = teacherSignUp.User;
-                teacher.Subject = db.SubjectTable.Find(teacherSignUp.Id);
+            teacher.User = teacherSignUp.User;
+            teacher.Subject = db.SubjectTable.Find(teacherSignUp.Id);
 
-                db.TeachersTable.Add(teacher);
-                int result = db.SaveChanges();
-                if (result > 0)
-                    return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                IEnumerable<SelectListItem> SubjectLists1 = (from x in db.SubjectTable.ToList()
-                                                             select new SelectListItem()
-                                                             {
-                                                                 Text = x.SubjectName,
-                                                                 Value = x.Id.ToString()
-                                                             }).ToList();
-
-                ViewBag.resultT = "Girdiğiniz email alınmıştır";
-                ViewData["Subject"] = SubjectLists1;
-                return View();
-            }
-
+            db.TeachersTable.Add(teacher);
+            int result = db.SaveChanges();
+            if (result > 0)
+                return RedirectToAction("Index", "Home");
         }
+
+
 
 
         IEnumerable<SelectListItem> SubjectLists = (from x in db.SubjectTable.ToList()
@@ -114,8 +84,6 @@ public class AccountController : Controller
         ViewBag.resultT = "Giriş yaparken bir hata oluştu";
         ViewData["Subject"] = SubjectLists;
         return View();
-
-
     }
 
 
@@ -149,16 +117,6 @@ public class AccountController : Controller
         }
         ViewBag.resultS = "Giriş yaparken bir hata oluştu";
         return View();
-    }
-
-    [Authorize]
-    public ActionResult logout()
-    {
-
-        FormsAuthentication.SignOut();
-        Session["isLoging"] = null;
-        Session["id"] = null;
-        return RedirectToAction("Index", "Home");
     }
 
 }

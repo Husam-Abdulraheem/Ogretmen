@@ -16,30 +16,26 @@ namespace Ogretmen_Ozel.Controllers
             return View(listSubject);
         }
 
+<<<<<<< HEAD
 
         [Authorize]
         public ActionResult TeachersPage(string addgiress)
+=======
+        public ActionResult TeachersPage(string address)
+>>>>>>> parent of bcd31e7 (Ali_2_Authenction+Filtre+someChnagesOnStyle+)
         {
             List<Teacher> vm = new List<Teacher>();
-            //if (subject != null)
-            //{
-            //    vm = db.TeachersTable.Where(x => x.Subject.Id == subject).ToList();
-            //}
 
             switch (address)
             {
                 case "Country":
-                    string county = (string)Session["AddressCountry"];
-
-                    vm = db.TeachersTable.Where(x => x.User.Address.Country == county).ToList();
+                    vm = db.TeachersTable.Where(x => x.User.Address.Country == "Türkiye").ToList();
                     break;
                 case "City":
-                    string city = (string)Session["AddressCity"];
-                    vm = db.TeachersTable.Where(x => x.User.Address.City == city).ToList();
+                    vm = db.TeachersTable.Where(x => x.User.Address.City == "Bartin").ToList();
                     break;
                 case "Street":
-                    string street = (string)Session["AddressStreet"];
-                    vm = db.TeachersTable.Where(x => x.User.Address.Street == street).ToList();
+                    vm = db.TeachersTable.Where(x => x.User.Address.Street == "KYK").ToList();
                     break;
                 default:
                     vm = db.TeachersTable.ToList();

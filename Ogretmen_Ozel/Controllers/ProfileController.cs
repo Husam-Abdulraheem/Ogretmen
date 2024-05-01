@@ -8,23 +8,25 @@ namespace Ogretmen_Ozel.Controllers
     {
         DataBaseContext db = new DataBaseContext();
         [HttpGet]
-        public ActionResult Profile(int? userId)
+        public ActionResult Profile(int? userid)
         {
             Teacher teacher = new Teacher();
-            if (userId != null)
-            {
-                teacher = db.TeachersTable.Where(x => x.Id == userId).FirstOrDefault();
 
-                return View(teacher);
+
+            if (userid != null)
+            {
+                teacher = db.TeachersTable.Where(x => x.Id == userid).FirstOrDefault();
+                ViewBag.userid = userid;
             }
-            else
-                return RedirectToAction("Index", "Home");
+
+
+            return View(teacher);
         }
 
         [HttpPost]
-        public ActionResult Profile(int? userId, Teacher ChangeAddress)
+        public ActionResult Profile(int? userid, Teacher ChangeAddress)
         {
-            Teacher addressUpdateInDb = db.TeachersTable.Where(x => x.Id == userId).FirstOrDefault();
+            Teacher addressUpdateInDb = db.TeachersTable.Where(x => x.Id == userid).FirstOrDefault();
 
             if (addressUpdateInDb != null)
             {
@@ -35,7 +37,6 @@ namespace Ogretmen_Ozel.Controllers
 
                 db.SaveChanges();
             }
-
             return View(addressUpdateInDb);
         }
     }
