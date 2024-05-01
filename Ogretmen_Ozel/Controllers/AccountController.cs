@@ -20,7 +20,7 @@ public class AccountController : Controller
         User loginUser = db.UserTable.Where(x => x.Email.Equals(user.Email) && x.Password.Equals(user.Password)).FirstOrDefault();
 
         if (loginUser != null)
-        {/// Ali
+        {
             Session["SessionUser"] = user.Name;
             return RedirectToAction("Index", "Home");
         }
