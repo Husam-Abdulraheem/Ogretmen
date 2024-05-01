@@ -16,7 +16,13 @@ namespace Ogretmen_Ozel.Controllers
             return View(listSubject);
         }
 
+<<<<<<< HEAD
+
+        [Authorize]
+        public ActionResult TeachersPage(string addgiress)
+=======
         public ActionResult TeachersPage(string address)
+>>>>>>> parent of bcd31e7 (Ali_2_Authenction+Filtre+someChnagesOnStyle+)
         {
             List<Teacher> vm = new List<Teacher>();
 

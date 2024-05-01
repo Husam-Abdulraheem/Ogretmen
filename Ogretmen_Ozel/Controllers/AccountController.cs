@@ -21,13 +21,12 @@ public class AccountController : Controller
 
         if (loginUser != null)
         {
-
             Session["SessionUser"] = user.Name;
             return RedirectToAction("Index", "Home");
         }
 
         {
-            ViewBag.login = "Hatalı Kullanıcı Adı Veya Parola";
+            ViewBag.login = "Hata oldu";
             return View();
         }
 
@@ -82,7 +81,7 @@ public class AccountController : Controller
                                                         Value = x.Id.ToString()
                                                     }).ToList();
 
-        ViewBag.resultT = "Eksik Bilgi Girdiniz";
+        ViewBag.resultT = "Giriş yaparken bir hata oluştu";
         ViewData["Subject"] = SubjectLists;
         return View();
     }
@@ -99,10 +98,8 @@ public class AccountController : Controller
     [HttpPost]
     public ActionResult SignUp_Student(StudentSignUp studentSignUp)
     {
-
         if (ModelState.IsValid)
         {
-
             Student student = new Student();
             studentSignUp.User.IsTeacher = false;
             studentSignUp.User.Address = studentSignUp.Address;
@@ -118,7 +115,7 @@ public class AccountController : Controller
                 return RedirectToAction("Index", "Home");
             }
         }
-        ViewBag.resultS = "Eksik Bilgi Girdiniz";
+        ViewBag.resultS = "Giriş yaparken bir hata oluştu";
         return View();
     }
 
