@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\alosh\\Desktop\\Ogretmen\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|c:\\users\\alosh\\desktop\\ogretmen\\ogretmen_ozel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\views\\profile\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\profile\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|c:\\users\\alosh\\desktop\\ogretmen\\ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\views\\profile\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|solutionrelative:ogretmen_ozel\\views\\profile\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8F34870B-09D6-49A5-AEF5-0D94AE4E6552}|Ogretmen_Ozel\\Ogretmen_Ozel.csproj|C:\\Users\\alosh\\Desktop\\Ogretmen\\ogretmen_ozel\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -73,7 +73,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -85,20 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAuwBQAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T20:58:32.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Home\\Index.cshtml",
@@ -111,20 +98,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Web.config",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Web.config",
-              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Web.config",
-              "RelativeToolTip": "Ogretmen_Ozel\\Web.config",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABkAAAA2AAAA",
+              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Web.config",
+              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Web.config",
+              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Web.config",
+              "RelativeToolTip": "Ogretmen_Ozel\\Views\\Web.config",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-05-01T15:58:19.854Z",
+              "WhenOpened": "2024-05-01T19:58:18.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T15:58:15.987Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\ProfileController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T20:58:33.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
+              "RelativeToolTip": "Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-01T17:32:05.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAuwBQAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T20:58:32.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "LogIn.cshtml",
               "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Account\\LogIn.cshtml",
               "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Account\\LogIn.cshtml",
@@ -138,49 +175,14 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Web.config",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Web.config",
-              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Web.config",
-              "RelativeToolTip": "Ogretmen_Ozel\\Views\\Web.config",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Web.config",
+              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Web.config",
+              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Web.config",
+              "RelativeToolTip": "Ogretmen_Ozel\\Web.config",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABkAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-05-01T19:58:18.278Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAYwB0AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T15:58:15.987Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "Ogretmen_Ozel\\Controllers\\ProfileController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwAwAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T20:58:33.835Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
-              "RelativeDocumentMoniker": "Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\alosh\\Desktop\\Ogretmen\\Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
-              "RelativeToolTip": "Ogretmen_Ozel\\Views\\Profile\\Profile.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAUAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-01T17:32:05.958Z"
+              "WhenOpened": "2024-05-01T15:58:19.854Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

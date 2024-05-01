@@ -18,7 +18,7 @@ namespace Ogretmen_Ozel.Controllers
 
 
         [Authorize]
-        public ActionResult TeachersPage(string address)
+        public ActionResult TeachersPage(string addgiress)
         {
             List<Teacher> vm = new List<Teacher>();
             //if (subject != null)
