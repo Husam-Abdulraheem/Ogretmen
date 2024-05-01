@@ -14,6 +14,15 @@
             @using (Html.BeginForm("SignUp_Student", "Account", FormMethod.Post, new { @class = "d-flex justify-content-center w-50" }))
             {
                 <div class="row p-2 w-75 justify-content-center">
+                    @if (ViewBag.resultS != null)
+                    {
+                        <div class="alert alert-danger d-flex align-items-center">
+                            <i class="bi bi-exclamation-triangle-fill text-danger pe-2"></i>
+                            <div>
+                                @ViewBag.resultS
+                            </div>
+                        </div>
+                    }
                     <div class="m-2 col p-2">
                         @Html.TextBoxFor(model => model.User.Name, new { type = "text", @class = "form-control", placeholder = "Ad" })
                     </div>
@@ -39,19 +48,8 @@
                     <div class="m-2 row">
                         @Html.TextBoxFor(model => model.Address.Street, new { type = "text", @class = "form-control", placeholder = "Sokak" })
                     </div>
-                    <input class="btn btn-light text-primary ms-3 w-50 input_sginUp" type="submit" value="Gönder" />
+                    <input class="btn btn-light text-primary ms-3 mt-2 w-50 input_sginUp" type="submit" value="Gönder" />
                     <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn")</div>
-
-                        @if (ViewBag.resultS != null)
-                        {
-                            <div class="alert alert-danger d-flex align-items-center">
-                                <i class="bi bi-exclamation-triangle-fill text-danger pe-2"></i>
-                                <div>
-                                    @ViewBag.resultS
-                                </div>
-                            </div>
-                        }
-
                 </div>
 
 

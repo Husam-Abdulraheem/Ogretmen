@@ -14,32 +14,31 @@
             <img class="p-5 signupimg" src="~/Content/photos/signup.png" alt="img" />
             @using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
             {
-                <div class="d-flex flex-column align-items-center justify-content-center p-2">
+                <div class="d-flex flex-column">
+                    @if (ViewBag.login != null)
+                    {
+                        <div class="alert alert-danger d-flex align-items-center">
+                            <i class="bi bi-exclamation-triangle-fill text-danger pe-2"></i>
+                            <div>@ViewBag.login</div>
+                        </div>
+                    }
+                    <div class="d-flex flex-column align-items-center justify-content-center p-2">
 
-                    <div class="input-group mb-3">
-                        <span class="input-group-text bg-primary border-0 bg-gradient" for="Email"><i class="bi bi-envelope-open-fill text-light"></i></span>
-                        @Html.TextBoxFor(model => model.Email, new { @required = "required", type = "email", @class = "form-control", placeholder = "Email", id = "Email" })
-                    </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-primary border-0 bg-gradient" for="Email"><i class="bi bi-envelope-open-fill text-light"></i></span>
+                            @Html.TextBoxFor(model => model.Email, new { @required = "required", type = "email", @class = "form-control", placeholder = "Email", id = "Email" })
+                        </div>
 
-                    <div class="m-2 input-group">
-                        <span class="input-group-text bg-primary border-0 bg-gradient" for="Password"><i class="bi bi-key-fill text-light"></i></span>
-                        @Html.TextBoxFor(model => model.Password, new { @required = "required", type = "password", @class = "form-control", placeholder = "Password", id = "Password" })
+                        <div class="m-2 input-group">
+                            <span class="input-group-text bg-primary border-0 bg-gradient" for="Password"><i class="bi bi-key-fill text-light"></i></span>
+                            @Html.TextBoxFor(model => model.Password, new { @required = "required", type = "password", @class = "form-control", placeholder = "Password", id = "Password" })
+                        </div>
+                        <input class="btn btn-light text-primary w-50 input_sginUp mt-2" type="submit" value="Gönder" />
+
+                        <div class="link_to_login">Hesabım Yok? Giriş Yap @Html.ActionLink("Öğretmen", "SignUp_Teacher") & @Html.ActionLink("Öğrenci", "SignUp_Student")</div>
                     </div>
-                    <input class="btn btn-light text-primary w-50 input_sginUp mt-2" type="submit" value="Gönder" />
-                    <div class="link_to_login">Hesabım Yok? Giriş Yap @Html.ActionLink("Öğretmen", "SignUp_Teacher") & @Html.ActionLink("Öğrenci", "SignUp_Student")</div>
                 </div>
-
-
             }
-
-            <div>
-                @if (ViewBag.resultT != null)
-                {
-                    <div>@ViewBag.resultT</div>
-                }
-            </div>
-
-
         </div>
     </div>
 </body>

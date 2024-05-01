@@ -14,6 +14,15 @@
             @using (Html.BeginForm("SignUp_Teacher", "Account",FormMethod.Post, new {@class="d-flex justify-content-center w-50"}))
             {
                 <div class="row p-2 w-75">
+                    @if (ViewBag.resultT != null)
+                    {
+                        <div class="alert alert-danger d-flex align-items-center">
+                            <i class="bi bi-exclamation-triangle-fill text-danger pe-2"></i>
+                            <div>
+                                @ViewBag.resultT
+                            </div>
+                        </div>
+                    }
                     <div class="m-2 col p-2">
                         @Html.TextBoxFor(model => model.User.Name, new { type = "text", @class = "form-control", placeholder = "Ad" })
                     </div>
@@ -41,20 +50,12 @@
                     </div>
 
                     <div class="col d-flex justify-content-between mt-2">
-                        @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Dersi Seç", new { @class = "form-control text-secondary bg-gradient w-50 text-center ms-2"})
+                        @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Dersi Seç", new { @class = "form-control text-secondary bg-gradient w-50 text-center ms-2" })
 
                         <input class="btn btn-light text-primary ms-3 input_sginUp" type="submit" value="Gönder" />
                     </div>
                     <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn")</div>
-                    @if (ViewBag.resultT != null)
-                    {
-                        <div class="alert alert-danger d-flex align-items-center">
-                            <i class="bi bi-exclamation-triangle-fill text-danger pe-2"></i>
-                            <div>
-                                @ViewBag.resultT
-                            </div>
-                        </div>
-                    }
+
                 </div>
 
 
