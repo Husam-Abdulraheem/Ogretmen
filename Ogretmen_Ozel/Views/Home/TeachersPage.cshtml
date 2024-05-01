@@ -38,7 +38,7 @@
                         </div>
                         <div class="body">
                             <h5 class="post-title">
-                                @Html.ActionLink(t.User.Name +" "+ t.User.LastName, "Profile", "Profile", new { userid = t.Id },null)
+                                @Html.ActionLink(t.User.Name +" "+ t.User.LastName, "Profile", "Profile", new { userId = t.Id },null)
                                 <span class="post-date badge bg-primary">@t.Subject.SubjectName</span>
                             </h5>
 

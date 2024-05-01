@@ -134,7 +134,8 @@ textarea {
 .input_sginUp:hover {
     background-color: #ccc !important;
 }
-.link_to_login{
-    padding-top:5PX;
+.link_to_login {
+    padding-top: 5PX;
     font-size: 13px;
+    
 }

@@ -10,8 +10,10 @@ namespace Ogretmen_Ozel
     {
         protected void Application_Start()
         {
+
             using (DataBaseContext db = new DataBaseContext())
             {
+
                 db.Database.CreateIfNotExists();
                 Database.SetInitializer<DataBaseContext>(new DropCreateDatabaseIfModelChanges<DataBaseContext>());
 
