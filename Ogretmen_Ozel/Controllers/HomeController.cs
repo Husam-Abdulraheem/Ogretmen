@@ -26,20 +26,22 @@ namespace Ogretmen_Ozel.Controllers
             //{
             //    vm = db.TeachersTable.Where(x => x.Subject.Id == subject).ToList();
             //}
-
+            string userData = User.Identity.Name;
+            var userDataValues = userData.Split('|');
+            string county = userDataValues[1];
+            string city = userDataValues[2];
+            string street = userDataValues[3];
             switch (address)
             {
                 case "Country":
-                    string county = (string)Session["AddressCountry"];
-
                     vm = db.TeachersTable.Where(x => x.User.Address.Country == county).ToList();
                     break;
                 case "City":
-                    string city = (string)Session["AddressCity"];
+
                     vm = db.TeachersTable.Where(x => x.User.Address.City == city).ToList();
                     break;
                 case "Street":
-                    string street = (string)Session["AddressStreet"];
+
                     vm = db.TeachersTable.Where(x => x.User.Address.Street == street).ToList();
                     break;
                 default:
