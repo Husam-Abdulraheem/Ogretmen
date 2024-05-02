@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@{
+    if (Session["isLoging"] == null)
+    {
+        Session["isLoging"] = false;
+    }
+
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -21,13 +29,20 @@
         <div class="container-fluid">
 
             @*profile img For Layout*@
-            <div class="me-5 align-items-start">
-                <i class="bi bi-person-circle profileImage"></i>
-                <ul class="profileList ">
-                    <li class="profileA text-dark">@Html.ActionLink("Profile", "Profile", "Profile")</li>
-                    <li class="profileA text-dark">@Html.ActionLink("Log out", "Index", "Home")</li>
-                </ul>
-            </div>
+            @if ((bool)Session["isLoging"] == true)
+            {
+                <div class="me-5 align-items-start">
+                    <i class="bi bi-person-circle profileImage"></i>
+                    <ul class="profileList ">
+                        <li class="profileA text-dark">@Html.ActionLink("Profile", "Profile", "Profile", new { userId = Session["id"] }, null)</li>
+                        <li class="profileA text-dark">@Html.ActionLink("Logout", "logout", "Account")</li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                @Html.ActionLink("Giriş Yap", "LogIn", "Account", null, new { @class = "nav-link bg-primary p-2 rounded-pill text-light bg-gradient" })
+            }
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,17 +55,14 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            @Html.ActionLink("Ana Sayfa", "Index", "Home",null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ana Sayfa", "Index", "Home", null, new { @class = "nav-link" })
 
                         </li>
                         <li class="nav-item">
                             @Html.ActionLink("Hocalar", "TeachersPage", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Iletisim", "Index", "Home", null,new { @class = "nav-link", href = "#Iletisim" })
-                        </li>
-                        <li class="nav-item ">
-                            @Html.ActionLink("Giriş Yap", "SignUp_Teacher", "Account", null, new { @class = "nav-link bg-primary p-2 rounded-pill text-light bg-gradient" })
+                            @Html.ActionLink("Iletisim", "Index", "Home", null, new { @class = "nav-link", href = "#Iletisim" })
                         </li>
                     </ul>
                 </div>
@@ -65,7 +77,7 @@
     </div>
 
     <div>
-        @*footer*@ 
+        @*footer*@
         <footer class="page-footer">
             <div class="container">
 

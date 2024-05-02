@@ -4,86 +4,118 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 
+
 }
 <head>
     <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <main class="d-flex flex-lg-row align-items-start  justify-content-lg-between flex-column">
-
-
     <div class="profile card p-0">
         <i class="bi bi-person-circle profileImageL"></i>
-    <div class="profilehead container-fluid bg-gradient">
-    </div>
-    <div class="p-4">
+        <div class="profilehead container-fluid bg-gradient">
+        </div>
+        <div class="p-4">
+            @if ((int)Session["Id"] == Model.Id)
+            {
+                using (Html.BeginForm())
+                {
+                    <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
+                    <p class="text-secondary">@Model.Subject.SubjectName</p>
 
-        @using (Html.BeginForm())
-        {
-            <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
-            <p class="text-secondary">@Model.Subject.SubjectName</p>
+                    <div class="">
+                        @Html.TextAreaFor(x => x.Description, new
+                        {
+                            @class = "form-control h-100 mb-3 p-1 "
+                                 ,
+                            placeholder = "Tanım"
+                        })
+                    </div>
 
-            <div class="">
-                @Html.TextAreaFor(x => x.Description, new
-           {
-               @class = "form-control h-100 mb-3 p-1 "
-                    ,
-               placeholder = "Tanım"
-           })
-            </div>
+                    <div class="mb-3 d-flex flex-column">
+                        <div class=" mb-1 w-100 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
+                            @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-25" })
+                            <i class="bi bi-pencil-square editIcon"></i>
+                        </div>
 
-            <div class="mb-3 d-flex flex-column">
-                <div class=" mb-1 w-100 d-flex align-items-center">
-                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
-                    @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-25" })
-                    <i class="bi bi-pencil-square editIcon"></i>
+                        <div class=" mb-1 w-100 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
+                            @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-25" })
+                            <i class="bi bi-pencil-square editIcon"></i>
+                        </div>
+
+
+                        <div class=" mb-2 w-100 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
+                            @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-25" })
+                            <i class="bi bi-pencil-square editIcon"></i>
+                        </div>
+
+                    </div>
+                    <input class="btn btn-primary p-2 bg-gradient" type="submit" value="Bilgilerinizi düzenleyin" />
+                }
+            }
+            else
+            {
+
+                <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
+                <p class="text-secondary">@Model.Subject.SubjectName</p>
+
+                <div class="">
+                    <p>Description:</p>
+                    <p class=" h-100 mb-3 p-1">@Model.Description</p>
                 </div>
 
-                <div class=" mb-1 w-100 d-flex align-items-center">
-                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
-                    @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-25" })
-                    <i class="bi bi-pencil-square editIcon"></i>
+                <div class="mb-3 d-flex flex-column">
+                    <div class=" mb-1 w-100 d-flex align-items-center">
+                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
+                        <div class="Profile_input w-25"> @Model.User.Address.Country </div>
+
+
+                    </div>
+
+                    <div class=" mb-1 w-100 d-flex align-items-center">
+                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
+                        <div class="Profile_input w-25"> @Model.User.Address.City </div>
+
+                    </div>
+
+
+                    <div class=" mb-2 w-100 d-flex align-items-center">
+                        <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
+                        <div class="Profile_input w-25"> @Model.User.Address.Street </div>
+
+                    </div>
+
                 </div>
 
 
-                <div class=" mb-2 w-100 d-flex align-items-center">
-                    <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
-                    @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-25" })
-                    <i class="bi bi-pencil-square editIcon"></i>
-                </div>
-
-            </div>
-            <input class="btn btn-primary p-2 bg-gradient" type="submit" value="Bilgilerinizi düzenleyin" />
-        }
-    </div>
-    </div>
-
-        <div class="res-box card-pricing bg-primary text-white w-100 bg-gradient shadow">
-            <h5 class="pb-2 fw-bold">Rezervasyonlar</h5>
-            <div>
-                <div class="res-boxs mb-2 text-dark card p-3">
-                    <p class="border-bottom">
-                    <i class="bi bi-person-fill fs-5 pe-1"></i> 
-                    <b>Öğrenci adı:</b> <span class="badge bg-primary">Husam</span>
-                    </p>
-
-                    <p class="border-bottom">
-                    <i class="bi bi-book-fill fs-5 pe-1"></i> 
-                        <b>Ders adı: </b><span class="badge bg-primary">Math</span>
-                    </p>
-
-                    <p class="border-bottom">
-                    <i class="bi bi-calendar-date-fill fs-5 pe-2"></i>
-                        <b>Tarih: </b><span class="badge bg-primary">MM/dd/yyyy HH:mm</span>
-                    </p>
-
-                    <p class="border-bottom">
-                    <i class="bi bi-pin-map-fill fs-5 pe-2"></i>
-                        <b>Address: </b><span class="badge bg-primary">Bartin</span>
-                    </p>
-                </div>
-            </div>
+            }
 
         </div>
+    </div>
 
+    <div class="res-box card-pricing bg-primary text-white w-100 bg-gradient shadow">
+        <h5 class="pb-2 fw-bold">Rezervasyonlar</h5>
+        <div>
+            <div class="res-boxs mb-2 text-dark card p-3">
+                <p class="border-bottom">
+                    <i class="bi bi-person-fill fs-5 pe-1"></i>
+                    <b>Öğrenci adı:</b> <span class="badge bg-primary">Husam</span>
+                </p>
+                <p class="border-bottom">
+                    <i class="bi bi-book-fill fs-5 pe-1"></i>
+                    <b>Ders adı: </b><span class="badge bg-primary">Math</span>
+                </p>
+                <p class="border-bottom">
+                    <i class="bi bi-calendar-date-fill fs-5 pe-2"></i>
+                    <b>Tarih: </b><span class="badge bg-primary">MM/dd/yyyy HH:mm</span>
+                </p>
+                <p class="border-bottom">
+                    <i class="bi bi-pin-map-fill fs-5 pe-2"></i>
+                    <b>Address: </b><span class="badge bg-primary">Bartin</span>
+                </p>
+            </div>
+        </div>
+    </div>
 </main>
-
