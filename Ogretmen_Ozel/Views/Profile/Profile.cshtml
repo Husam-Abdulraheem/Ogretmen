@@ -2,7 +2,9 @@
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    var userData = User.Identity.Name;
+    var userDataValues = userData.Split('|');
+    string id = userDataValues[0];
 
 
 }
@@ -15,7 +17,7 @@
         <div class="profilehead container-fluid bg-gradient">
         </div>
         <div class="p-4">
-            @if ((int)Session["Id"] == Model.Id)
+            @if (Int32.Parse(id)== Model.Id)
             {
                 using (Html.BeginForm())
                 {

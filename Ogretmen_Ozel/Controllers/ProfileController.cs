@@ -7,6 +7,9 @@ namespace Ogretmen_Ozel.Controllers
     public class ProfileController : Controller
     {
         DataBaseContext db = new DataBaseContext();
+
+
+        [Authorize]
         [HttpGet]
         public ActionResult Profile(int? userId)
         {

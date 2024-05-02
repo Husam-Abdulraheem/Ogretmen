@@ -12,6 +12,10 @@ public class AccountController : Controller
     //Login for all users
     public ActionResult LogIn()
     {
+        if (User.Identity.IsAuthenticated)
+        {
+            return RedirectToAction("Index", "Home");
+        }
         //string userLogin = se
         return View();
     }
@@ -22,15 +26,17 @@ public class AccountController : Controller
 
         if (loginUser != null)
         {
-            Session["isLoging"] = true;
-            Session["AddressCountry"] = loginUser.Address.Country;
-            Session["AddressCity"] = loginUser.Address.City;
-            Session["AddressStreet"] = loginUser.Address.Street;
+            string currentUser = string.Format("{0}|{1}|{2}|{3}", loginUser.Id, loginUser.Address.Country, loginUser.Address.City, loginUser.Address.Street);
+            /* Session["isLoging"] = true;
+             Session["AddressCountry"] = loginUser.Address.Country;
+             Session["AddressCity"] = loginUser.Address.City;
+             Session["AddressStreet"] = loginUser.Address.Street;*/
             if (loginUser.IsTeacher == true)
             {
-                Session["id"] = loginUser.Id;
+                //
 
-                FormsAuthentication.SetAuthCookie(loginUser.Name, true);
+                FormsAuthentication.SetAuthCookie(currentUser, false);
+
                 return RedirectToAction("Profile", "Profile", new { userId = loginUser.Id });
 
             }
@@ -46,8 +52,7 @@ public class AccountController : Controller
 
     }
 
-
-    //signUp for teacher
+    [Authorize]
     [HttpGet]
     public ActionResult SignUp_Teacher()
     {
@@ -119,7 +124,7 @@ public class AccountController : Controller
     }
 
 
-    //signUp for Student
+    [Authorize]
     [HttpGet]
     public ActionResult SignUp_Student()
     {
@@ -150,13 +155,13 @@ public class AccountController : Controller
         ViewBag.resultS = "Giriş yaparken bir hata oluştu";
         return View();
     }
+
+
     [Authorize]
     public ActionResult logout()
     {
 
         FormsAuthentication.SignOut();
-        Session["isLoging"] = null;
-        Session["id"] = null;
         return RedirectToAction("Index", "Home");
     }
 

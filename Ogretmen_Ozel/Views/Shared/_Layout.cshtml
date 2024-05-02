@@ -1,11 +1,8 @@
-﻿@{
-    if (Session["isLoging"] == null)
-    {
-        Session["isLoging"] = false;
-    }
-
+﻿@{ 
+    var userData = User.Identity.Name;
+    var userDataValues = userData.Split('|');
+    string id = userDataValues[0];
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,12 +26,12 @@
         <div class="container-fluid">
 
             @*profile img For Layout*@
-            @if ((bool)Session["isLoging"] == true)
+            @if (User.Identity.IsAuthenticated)
             {
                 <div class="me-5 align-items-start">
                     <i class="bi bi-person-circle profileImage"></i>
                     <ul class="profileList ">
-                        <li class="profileA text-dark">@Html.ActionLink("Profile", "Profile", "Profile", new { userId = Session["id"] }, null)</li>
+                        <li class="profileA text-dark">@Html.ActionLink("Profile", "Profile", "Profile", new { userId = id }, null)</li>
                         <li class="profileA text-dark">@Html.ActionLink("Logout", "logout", "Account")</li>
                     </ul>
                 </div>
@@ -83,6 +80,7 @@
 
                 <h3 id="Hakkimizda" class="d-flex justify-content-center">Hakkimizda</h3>
                 <p>
+                    
                     Go Make Something Awesome
                     Font Awesome is the internet's icon library and toolkit used by millions of designers, developers, and content creators.
 
