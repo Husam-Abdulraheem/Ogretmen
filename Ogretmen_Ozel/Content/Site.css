@@ -261,3 +261,6 @@ textarea {
 .animationLogin {
     animation: reSwapTransition 0.75s;
 }
+.eErorr{
+    font-size:100px;
+}

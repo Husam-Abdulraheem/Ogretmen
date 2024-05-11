@@ -102,6 +102,13 @@ namespace Ogretmen_Ozel.Controllers
             return View(vm);
         }
 
+        public ActionResult Error()
+        {
+            Response.StatusCode = 404;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+
 
     }
 }
