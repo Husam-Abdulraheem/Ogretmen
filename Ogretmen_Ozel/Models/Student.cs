@@ -8,9 +8,9 @@ namespace Ogretmen_Ozel.Models
     public class Student
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StudentID { get; set; }
+        public int Id { get; set; }
 
-        public User User { get; set; }
-        public virtual List<Reservation> reservation { get; set; }
+        public virtual User User { get; set; }
+        public virtual List<Reservation> Reservation { get; set; }
     }
 }

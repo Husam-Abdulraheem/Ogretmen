@@ -1,8 +1,16 @@
-﻿@{ 
-    var userData = User.Identity.Name;
-    var userDataValues = userData.Split('|');
-    string id = userDataValues[0];
+﻿@{
+
+    int userId;
+    Ogretmen_Ozel.Models.DataBaseContext db = new Ogretmen_Ozel.Models.DataBaseContext();
+    Ogretmen_Ozel.Models.User currentUser = new Ogretmen_Ozel.Models.User();
+    if (User.Identity.IsAuthenticated)
+    {
+        string name = User.Identity.Name.ToString();
+        int.TryParse(name,out userId);
+        currentUser = db.UserTable.Where(x => x.Id == userId).FirstOrDefault();
+    }
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,23 +30,56 @@
     @*back to top button*@
     <div class="back-to-top"></div>
     @*navigation bar*@
-    <nav class="navbar navbar-light bg-white navbar-expand-lg sticky">
+    <nav class="navbar navbar-light bg-white navbar-expand-lg sticky mb-2">
         <div class="container-fluid">
 
             @*profile img For Layout*@
             @if (User.Identity.IsAuthenticated)
             {
+
+
+
+
                 <div class="me-5 align-items-start">
-                    <i class="bi bi-person-circle profileImage"></i>
-                    <ul class="profileList ">
-                        <li class="profileA text-dark">@Html.ActionLink("Profile", "Profile", "Profile", new { userId = id }, null)</li>
-                        <li class="profileA text-dark">@Html.ActionLink("Logout", "logout", "Account")</li>
-                    </ul>
+                    @if (@currentUser.Image != null)
+                    {
+                        <img src="@currentUser.Image" class="imageP profileImage" alt="Profile img" />
+                    }
+                    else
+                    {
+                        <i class="bi bi-person-circle profileImage"></i>
+                    }
+
+                <ul class="profileList ">
+
+                    @if (currentUser != null && currentUser.IsTeacher == true)
+                    {
+                        <li class="profileA text-dark">@Html.ActionLink("Profile", "TeacherProfile", "Profile", new { userId = currentUser.Id }, null)</li>
+                    }
+                    else if (currentUser != null && currentUser.IsAdmin)
+                    {
+
+                        <li class="profileA text-dark">
+                            @Html.ActionLink("Kontrol Paneli", "AdminPage", "Admin", null,null)
+
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="profileA text-dark">@Html.ActionLink("Profile", "StudentProfile", "Profile", new { userId = currentUser.Id }, null)</li>
+                    }
+
+                    <li class="profileA text-dark">@Html.ActionLink("Logout", "logout", "Account")</li>
+                </ul>
                 </div>
             }
             else
             {
-                @Html.ActionLink("Giriş Yap", "LogIn", "Account", null, new { @class = "nav-link bg-primary p-2 rounded-pill text-light bg-gradient" })
+
+                @Html.ActionLink("Hesap Oluştur", "SignUp_Student", "Account", null, new { @class = "nav-link bg-primary p-2 rounded text-light ps-3 pe-3 bg-secondary bg-gradient " })
+
+                @Html.ActionLink("Giriş Yap", "LogIn", "Account", null, new { @class = "nav-link bg-primary p-2 ps-3 pe-3 rounded text-light bg-gradient ms-2 " })
+
             }
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -50,18 +91,31 @@
 
 
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+
+
                         <li class="nav-item">
-                            @Html.ActionLink("Ana Sayfa", "Index", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Ana sayfa", "Index", "Home", null, new { @class = "nav-link" })
 
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Hocalar", "TeachersPage", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Öğretmenler", "TeachersPage", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Iletisim", "Index", "Home", null, new { @class = "nav-link", href = "#Iletisim" })
+                            @Html.ActionLink("İletişim", "Index", "Home", null, new { @class = "nav-link", href = "#Iletisim" })
                         </li>
-                    </ul>
+                        </ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (currentUser != null && currentUser.IsAdmin == true)
+                            {
+                                <li class="nav nav-item">
+                                    @Html.ActionLink("Kontrol Paneli", "AdminPage", "Admin", null, new { @class = "nav-link bg-primary text-light rounded" })
+
+                                </li>
+                            }
+                        }
+                    
                 </div>
 
 
@@ -69,7 +123,7 @@
         </div>
     </nav>
     @*content erea*@
-    <div class="container body-content">
+    <div >
         @RenderBody()
     </div>
 
@@ -79,15 +133,14 @@
             <div class="container">
 
                 <h3 id="Hakkimizda" class="d-flex justify-content-center">Hakkimizda</h3>
-                <p>
-                    
-                    Go Make Something Awesome
-                    Font Awesome is the internet's icon library and toolkit used by millions of designers, developers, and content creators.
+                <p class="text-center">
 
-                    Made with  and  in Bentonville, Boston, Chicago, Grand Rapids, Joplin, Kansas City, Seattle, Tampa, and Vergennes.
+                    Hoş geldiniz! Sitemize hoş geldiniz. Burada, her öğrencinin ihtiyaçlarına özel olarak tasarlanmış eğitim hizmetlerini sunmayı amaçlıyoruz. Bireysel eğitimin gücüne ve öğrenme yollarının kişisel seyrine olan olumlu etkisine inanıyoruz. Yenilikçi müfredatımız ve uzman öğretmen kadromuzla, öğrencilere akademik hedeflerine güvenle ve başarıyla ulaşmalarında yardımcı oluyoruz.
+
+                    Deneyimimizi ve bireysel ilgiyi bir araya getirerek, her öğrencinin ihtiyaçlarını karşılayan üstün bir eğitim deneyimi sağlıyoruz. Belirli bir konuda ek destek arıyorsanız veya önemli sınavlara hazırlanıyorsanız, başarınızın her adımında sizinle birlikteyiz.
                 </p>
                 <hr />
-                <h3 id="Iletisim" class="d-flex justify-content-center">Iletisim</h3>
+                <h3 id="Iletisim" class="d-flex justify-content-center">İletişim</h3>
                 <div class="social-media-button d-flex justify-content-center mt-5">
                     <a href="#" class="me-4"><span class="bi bi-facebook"></span></a>
                     <a href="#" class="me-4"><span class="bi bi-twitter-x"></span></a>
@@ -104,5 +157,25 @@
     @RenderSection("scripts", required: false)
     <script src="~/Content/theme.js"></script>
     <script src="~/Content/Stie.js"></script>
+    <script>
+        $(document).ready(function () {
+            var sidebar = $('#sidebar');
+            var footer = $('footer');
+
+            $(window).scroll(function () {
+                var scrollPosition = $(this).scrollTop();
+                var footerPosition = footer.offset().top;
+                var sidebarHeight = sidebar.height();
+                var windowHeight = $(window).height();
+
+                if (scrollPosition-160 + sidebarHeight > footerPosition) {
+                    sidebar.addClass('footer-reached');
+                } else {
+                    sidebar.removeClass('footer-reached');
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>

@@ -1348,7 +1348,7 @@ a.text-dark:hover, a.text-dark:focus {
   height: 320px;
   background-color: #F6F5FC;
   color: #645F88;
-  border-radius: 30px;
+  border-radius: 10px;
   z-index: 10;
 }
 

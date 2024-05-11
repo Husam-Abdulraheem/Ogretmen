@@ -6,13 +6,14 @@
 <main>
 @*Home page*@
 
-    <div class="container">
-        <div class="page-banner home-banner">
+    <div class="container body-content">
+        <div class="homeAnimation page-banner home-banner">
             <div class="row align-items-center flex-wrap-reverse h-100">
                 <div class="col-md-6 py-5 wow fadeInLeft">
                     <h1 class="mb-4">Özel öğretmene hoş geldiniz</h1>
                     <p class="text-lg text-grey mb-5">Tüm eğitim seviyelerine yönelik özel dersler için ilk platform</p>
-                    <a href="#" class="btn btn-primary btn-split">Derslere git<div class="fab"><i class="bi bi-chevron-double-down"></i></div></a>
+                    
+                    <div class="fab">@Html.ActionLink("Derslere git", "Index", null, new { @class = "btn btn-primary p-2 btn-split rounded bi bi-chevron-double-down" ,href = "#dersler" })</div>
                 </div>
                 <div class="col-md-6 py-5 wow zoomIn">
                     <div class="img-fluid text-center">
@@ -26,28 +27,39 @@
     <div class="page-section">
         <div class="container">
             <hr />
-                <div class="row my-5">
-            @foreach (var s in Model)
-            {
-                    <div class="col-lg-4 py-3">
-                        <div class="card-blog">
-                            <div class="header">
-                                <div class="post-thumb img-fluid">
-                                    <img class="w-100 h-100" src="https://lh3.google.com/u/0/d/10JJ82lCm3qomwkmLSf6pOgUQpirXBxDZ=w1920-h897-iv1" alt="">
+                <div class="row my-5" id="dersler">
+                    @foreach (var s in Model)
+                    {
+                        <div class="col-lg-4 py-3 hoverScale" cursor: "pointer" onclick="redirectToLesson('@s.Id')">
+                            <div class="homeAnimation card-blog">
+                                <div class="header">
+                                    <div class="post-thumb img-fluid">
+                                        <img class="w-100 h-100" src="@s.Image" alt="Subject img">
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <h5 class="post-title">
+                                        @using (Html.BeginForm("TeachersPage", "Home", FormMethod.Get))
+                                        {
+                                            <input type="hidden" value="" name="address" />
+                                            <input type="hidden" value="@s.Id" name="id" />
+                                            <input class="border-0 bg-transparent text-primary" type="submit" value="@s.SubjectName" />
+                                        }
+
+                                    </h5>
+                                    <div class="post-date">@s.SubjectDescription</div>
                                 </div>
                             </div>
-                            <div class="body">
-                                <h5 class="post-title">
-                                @Html.ActionLink(s.SubjectName,"TeachersPage",null,null)
-                                </h5>
-                                <div class="post-date">@s.SubjectDescription</div>
-                            </div>
                         </div>
-                    </div>
-            }
+                    }
                 </div>
 
         </div>
     </div>
 
 </main>
+<script>
+    function redirectToLesson(lessonId) {
+        window.location.href = '/Home/TeachersPage?address=' + "&" + "?id=" + lessonId; 
+    }
+</script>

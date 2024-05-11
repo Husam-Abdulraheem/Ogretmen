@@ -8,13 +8,13 @@
     <title>LogIn</title>
 </head>
 <body>
-    <div class=" mb-5">
-        <h1 class="mb-5 text-primary fw-bold">Tekrar Hoşgeldiniz</h1>
+    <div class="animationLogin container mb-5">
+        <h1 class="m-5 ms-2 text-primary fw-bold">Tekrar Hoşgeldiniz</h1>
         <div class="d-flex align-items-center justify-content-center border-1 p-3 bg-primary rounded bg-gradient text-light">
             <img class="p-5 signupimg" src="~/Content/photos/signup.png" alt="img" />
             @using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
             {
-                <div class="d-flex flex-column align-items-start ">
+                <div class="d-flex flex-column align-items-center ">
                     @if (ViewBag.login != null)
                     {
                         <div class="alert alert-danger d-flex align-items-center">
@@ -35,7 +35,7 @@
                     </div>
                     <input class="btn btn-light text-primary w-50 input_sginUp mt-2" type="submit" value="Gönder" />
 
-                    <div class="link_to_login">Hesabım Yok? Hesap Oluştur @Html.ActionLink("Öğretmen", "SignUp_Teacher", null, new { @class = "text-light text-decoration-underline" }) | @Html.ActionLink("Öğrenci", "SignUp_Student", null, new { @class = "text-light text-decoration-underline" })</div>
+                    <div class="link_to_login">Hesabım Yok? Hesap Oluştur @Html.ActionLink("Öğretmen", "SignUp_Teacher","Account",null, new { @class = "text-light text-decoration-underline" }) | @Html.ActionLink("Öğrenci", "SignUp_Student", "Account",null, new { @class = "text-light text-decoration-underline" })</div>
                 </div>
                 </div>
             }

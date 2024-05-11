@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace Ogretmen_Ozel.Models
 {
@@ -28,6 +29,15 @@ namespace Ogretmen_Ozel.Models
         public bool IsTeacher { get; set; }
 
         public virtual Address Address { get; set; }
+
+        [Required]
+        public bool IsAdmin { get; set; }
+
+        public string Image { get; set; }
+
+        [NotMapped]
+
+        public HttpPostedFileBase ImageFile { get; set; }
 
 
     }

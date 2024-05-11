@@ -172,7 +172,6 @@
     <Compile Include="Models\AccountModels\TeacherSignUp.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
-    <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Student.cs" />
@@ -201,6 +200,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\all.min.css" />
+    <Content Include="Content\css\framework.css" />
+    <Content Include="Content\css\master.css" />
     <Content Include="Content\fonts\maicons.svg" />
     <Content Include="Content\photos\HomeImg.svg" />
     <Content Include="Content\photos\signup.png" />
@@ -222,6 +224,14 @@
     <Content Include="Content\bootstrap-icons\font\bootstrap-icons.json" />
     <Content Include="Content\bootstrap-icons\font\fonts\bootstrap-icons.woff" />
     <Content Include="Content\bootstrap-icons\font\fonts\bootstrap-icons.woff2" />
+    <Content Include="Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Content\webfonts\fa-v4compatibility.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -246,18 +256,18 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Profile\Profile.cshtml" />
+    <Content Include="Views\Profile\TeacherProfile.cshtml" />
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\Account\SignUp_Teacher.cshtml" />
     <Content Include="Views\Account\SignUp_Student.cshtml" />
     <Content Include="Views\Home\TeachersPage.cshtml" />
     <Content Include="Views\Admin\AdminPage.cshtml" />
+    <Content Include="Views\Profile\StudentProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

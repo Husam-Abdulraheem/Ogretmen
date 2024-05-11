@@ -1,16 +1,293 @@
-﻿
+﻿@model Ogretmen_Ozel.Models.Subject
 @{
     ViewBag.Title = "AdminPage";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int userId;
+    Ogretmen_Ozel.Models.DataBaseContext db = new Ogretmen_Ozel.Models.DataBaseContext();
+    Ogretmen_Ozel.Models.User currentUser = new Ogretmen_Ozel.Models.User();
+    if (User.Identity.IsAuthenticated)
+    {
+        string name = User.Identity.Name.ToString();
+        int.TryParse(name, out userId);
+        currentUser = db.UserTable.Where(x => x.Id == userId).FirstOrDefault();
+
+    }
+
 }
 
-<h2>AdminPage</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="~/Content//css/all.min.css" />
+    <link rel="stylesheet" href="~/Content//css/framework.css" />
+    <link rel="stylesheet" href="~/Content/css/master.css" />
+</head>
+<body>
+    <div class="page container d-flex rounded ms-0 ps-0 ">
+        <div class="hiddenDiv"></div>
+        <div class="homeAnimation sidebar p-20  bg-primary bg-gradient text-light container position-fixed" id="sidebar">
+            <hr />
+            <ul>
+                <li>
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#İstatistikler">
+                        <i class="bi bi-pie-chart-fill fs-5 text-primary"></i>
+                        <span>İstatistikler</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#hedefler">
+                        <i class="bi bi-graph-up-arrow fs-5 text-primary"></i>
+                        <span>Yıllık Hedefler</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#ders">
+                        <i class="bi bi-file-earmark-plus-fill  fs-5 text-primary"></i>
+                        <span>Ders Ekle</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#mevcut">
+                        <i class="bi bi-book-fill fs-5 text-primary"></i>
+                        <span>Mevcut Dersler</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#Öğrenci">
+                        <i class="bi bi-backpack-fill fs-5 text-primary"></i>
+                        <span>Öğrenci</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#Öğretmen">
+                        <i class="bi bi-duffle-fill fs-5 text-primary"></i>
+                        <span>Öğretmen</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content ">
+            <h1 class="p-relative text-primary">Kontrol Paneli</h1>
+            <div class="wrapper d-grid gap-20 text-primary">
+                <!-- Start Welcome Widget -->
+                <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
+                    <div class="intro p-20 d-flex space-between bg-primary bg-gradient">
+                        <div>
+                            <h2 class="m-5 ms-0 text-light">Merhaba</h2>
 
-<div class="d-flex">
-    <div class="card bg-primary text-light">
-        side par
+                        </div>
+                        <img class="hide-mobile" src="imgs/welcome.png" alt="" />
+                    </div>
+                    <img src="@currentUser.Image" class=" avatar bg-light" alt="admin img" />
+                    <div class="body txt-c d-flex p-20 mt-20 mb-20 block-mobile">
+                        <div>@currentUser.Name @currentUser.LastName <span class="d-block c-grey fs-14 mt-10">Ad Soyad</span></div>
+
+                        <div>@currentUser.Email <span class="d-block c-grey fs-14 mt-10">Email</span></div>
+                    </div>
+                    <div class="body border-0 txt-c d-flex p-20 mt-20 mb-20 block-mobile">
+                        <div>@currentUser.Phone <span class="d-block c-grey fs-14 mt-10">Telefon Numarası</span></div>
+
+                        <div>@currentUser.Address.Country | @currentUser.Address.City <span class="d-block c-grey fs-14 mt-10">Adres</span></div>
+                    </div>
+                </div>
+                <!-- End Welcome Widget -->
+                <!-- Start İstatistikler Widget -->
+                <div class="homeAnimation tickets p-20 bg-white rad-10 w-100" id="İstatistikler">
+                    <h2 class="mt-0 mb-10">İstatistikler</h2>
+                    <p class="mt-0 mb-20 c-grey fs-15">Siteye İlişkin Genel İstatistikler</p>
+                    <div class="d-flex txt-c gap-20 f-wrap">
+                        <div class="box p-20 rad-10 fs-13 c-grey">
+                            <i class="bi bi-backpack-fill fa-2x mb-10 text-primary"></i>
+                            <span class="d-block c-black fw-bold fs-25 mb-5">@ViewBag.students.Count</span>
+                            Öğrenci Sayısı
+                        </div>
+                        <div class="box p-20 rad-10 fs-13 c-grey">
+                            <i class="bi bi-duffle-fill fa-2x mb-10 text-primary"></i>
+                            <span class="d-block c-black fw-bold fs-25 mb-5">@ViewBag.teachers.Count</span>
+                            Öğretmen Sayısı
+                        </div>
+                        <div class="box p-20 rad-10 fs-13 c-grey">
+                            <i class="bi bi-bookmarks-fill fa-2x mb-10 text-primary"></i>
+                            <span class="d-block c-black fw-bold fs-25 mb-5">@ViewBag.reservations.Count</span>
+                            Rezervasyon Sayısı
+                        </div>
+                        <div class="box p-20 rad-10 fs-13 c-grey">
+                            <i class="bi bi-book-fill fa-2x mb-10 text-primary"></i>
+                            <span class="d-block c-black fw-bold fs-25 mb-5">@ViewBag.subjects.Count</span>
+                            Ders Sayısı
+                        </div>
+                    </div>
+                </div>
+                <!-- End İstatistikler Widget -->
+                <!-- Start Yıllık Hedefler Widget -->
+                <div class="homeAnimation targets p-20 bg-white rad-10" id="hedefler">
+                    <h2 class="mt-0 mb-10">Yıllık Hedefler</h2>
+                    <p class="mt-0 mb-20 c-grey fs-15">Yılın Hedefleri</p>
+                    <div class="target-row mb-20 center-flex">
+                        <div class="icon center-flex rounded bg-lightPrimary">
+                            <i class="fa-solid fa-user fa-lg"></i>
+                        </div>
+                        <div class="details">
+                            <span class="fs-14 c-grey">Sitenin kullanıcı sayısı</span>
+                            <span class="d-block mt-5 mb-10 fw-bold">@ViewBag.users.Count %</span>
+                            <div class="progress p-relative">
+                                <span class="bg-orange orange" style="width: calc(@ViewBag.users.Count *1px)">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="target-row mb-20 center-flex">
+                        <div class="icon center-flex rounded bg-lightPrimary">
+                            <i class="bi bi-bookmarks-fill fa-lg"></i>
+                        </div>
+                        <div class="details">
+                            <span class="fs-14 c-grey">Rezervasyonlar</span>
+                            <span class="d-block mt-5 mb-10 fw-bold">@ViewBag.reservations.Count %</span>
+                            <div class="progress p-relative">
+                                <span class="bg-orange orange" style="width: calc(@ViewBag.reservations.Count * 1px)">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Yıllık Hedefler Widget -->
+                <!-- Start ders ekleme Widget -->
+                <div class="homeAnimation quick-draft p-20 bg-white rad-10" id="ders">
+                    <h2 class="mt-0 mb-10">Yeni Ders Ekle</h2>
+                    <p class="mt-0 mb-20 c-grey fs-15">Siteye yeni ders ekleme</p>
+                    @using (Html.BeginForm("AdminPage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div>
+                            @Html.TextBoxFor(x => x.SubjectName, new { @class = "d-block mb-20 w-full p-10 b-none bg-lightPrimary rad-6", placeholder = "Ders Adı", required = "required" })
+                        </div>
+                        <div>
+                            @Html.TextAreaFor(x => x.SubjectDescription, new { @class = "d-block mb-20 w-full p-10 b-none bg-lightPrimary rad-6", placeholder = "Ders Açıklaması", required = "required" })
+                        </div>
+                        <div class="d-flex">
+                            <label class="text-secondary" for="addImage">Fotoğraf ekle</label>
+                            <input type="file" name="imageFile" id="addImage" class="ms-5" />
+                        </div>
+                        <input class="save d-block fs-14 bg-primary c-white b-none w-fit btn-shape" type="submit" value="Ekle" />
+                    }
+                </div>
+                <!-- End ders ekleme Widget -->
+                <!-- Start Delete Subjects Widget -->
+                <div class="homeAnimation latest-news p-20 bg-white rad-10 txt-c-mobile" id="mevcut">
+                    <h2 class="mt-0 mb-20">Mevcut Dersler</h2>
+                    @foreach (var subj in ViewBag.Subjects)
+                    {
+                        using (Html.BeginForm("EditSubject", "Admin", FormMethod.Get))
+                        {
+                            <div class="news-row d-flex align-center mb-5">
+                                <img src="@subj.Image" alt="subjectImg" />
+                                <div class="info border-bottom w-50">
+                                    <input type="hidden" value="@subj.Id" name="sId" />
+
+                                    @Html.TextBox("name", (string)subj.SubjectName, new { @class = "border-0 " })
+                                </div>
+                                <i class="iconsEditSubjects bi bi-vector-pen text-warning fs-5 me-4">
+                                    <input type="submit" class="editSubjects " value=" " />
+
+                                </i>
+                                @Html.ActionLink(" ", "DeleteSubject", "Admin", new { sId = subj.Id }, new { @class = "bi bi-trash-fill text-danger" })
+                            </div>
+
+
+                        }
+                    }
+
+                </div>
+                <!-- End Delete Subjects Widget -->
+            </div>
+            <!-- Start Öğrenci Table -->
+            <div class="homeAnimation projects p-20 bg-white rad-10 m-20" id="Öğrenci">
+                <h2 class="mt-0 mb-20">Öğrenci</h2>
+                <div class="responsive-table">
+                    <table class="fs-15 w-full">
+                        <thead>
+                            <tr>
+                                <td>Profile</td>
+                                <td>Ad Soyad</td>
+                                <td>Email</td>
+                                <td>Telefon Numarası</td>
+                                <td>Yönetici</td>
+                                <td>Adres</td>
+                                <td>Silmek</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var s in ViewBag.students)
+                            {
+                                if (s.User.IsAdmin == false)
+                                {
+                                    <tr>
+                                        <td>@Html.ActionLink((string)s.User.Id.ToString(), "StudentProfile", "Profile", new { userId = s.User.Id }, new {@class= "text-light bg-primary p-1 ps-2 pe-2 rounded" })</td>
+                                        <td>@s.User.Name</td>
+                                        <td>@s.User.Email</td>
+
+                                        <td>@s.User.Phone</td>
+                                        <td>@s.User.IsAdmin</td>
+                                        <td>@s.User.Address.Country | @s.User.Address.City |                                @s.User.Address.Street</td>
+                                        <td>
+                                            @Html.ActionLink(" ", "DeleteStudent", "Admin", new { sId = s.User.Id }, new { @class = "bi bi-trash-fill text-danger" })
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- End Öğrenci Table -->
+            <!-- Start Öğretmen Table -->
+            <div class="homeAnimation projects p-20 bg-white rad-10 m-20" id="Öğretmen">
+                <h2 class="mt-0 mb-20">Öğretmen</h2>
+                <div class="responsive-table">
+                    <table class="fs-15 w-full">
+                        <thead>
+                            <tr>
+                                <td>Profile</td>
+                                <td>Ad Soyad</td>
+                                <td>Email</td>
+                                <td>Telefon Numarası</td>
+                                <td>Yönetici</td>
+                                <td>Ders</td>
+                                <td>Rezervasyon sayısı</td>
+                                <td>Adres</td>
+                                <td>Silmek</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var s in ViewBag.teachers)
+                            {
+                                <tr>
+                                    <td>@Html.ActionLink((string)s.User.Id.ToString(), "TeacherProfile", "Profile", new { userId = s.User.Id }, new { @class = "text-light bg-primary p-1 ps-2 pe-2 rounded" })</td>
+                                    <td>@s.User.Name</td>
+                                    <td>@s.User.Email</td>
+
+                                    <td>@s.User.Phone</td>
+                                    <td>@s.User.IsAdmin</td>
+                                    <td>@s.Subject.SubjectName</td>
+                                    <td>@s.Reservations.Count</td>
+                                    <td>@s.User.Address.Country | @s.User.Address.City |                                @s.User.Address.Street</td>
+                                    <td>
+                                        @Html.ActionLink(" ", "DeleteTeacher", "Admin", new { sId = s.User.Id }, new { @class = "bi bi-trash-fill text-danger" })
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- End Öğretmen Table -->
+
+        </div>
     </div>
-    <div>
-        content
-    </div>
-</div>
+</body>
+</html>

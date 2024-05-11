@@ -1,0 +1,248 @@
+﻿@model Ogretmen_Ozel.Models.Student
+@{
+    ViewBag.Title = "StudentProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int userId;
+    Ogretmen_Ozel.Models.DataBaseContext db = new Ogretmen_Ozel.Models.DataBaseContext();
+    Ogretmen_Ozel.Models.User currentUser = new Ogretmen_Ozel.Models.User();
+    if (User.Identity.IsAuthenticated)
+    {
+        string name = User.Identity.Name.ToString();
+        int.TryParse(name, out userId);
+        currentUser = db.UserTable.Where(x => x.Id == userId).FirstOrDefault();
+
+    }
+
+
+}
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<main class="container d-flex flex-lg-row align-items-start justify-content-lg-between flex-column">
+    <div class="profile homeAnimation card p-0">
+        @if (Model.User.Image != null)
+        {
+            <img src="@Model.User.Image" class="profileInImg" alt="Profile img" />
+        }
+        else
+        {
+            <i class="bi bi-person-circle profileImageL"></i>
+        }
+        <div class="profilehead container-fluid bg-gradient">
+        </div>
+        <div class="homeAnimation p-4">
+            @if (Model.User.Id == currentUser.Id)
+            {
+                using (Html.BeginForm("StudentProfile", "Profile", FormMethod.Post))
+                {
+                    <h1 class="mb-5">@Model.User.Name @Model.User.LastName</h1>
+
+
+
+                    <input type="hidden" name="userId" value="@Model.Id" />
+                    <div class="d-flex">
+                        <div class="mb-3 d-flex flex-column">
+                            <div class=" mb-1 w-100 d-flex align-items-center">
+                                <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
+                                @Html.TextBoxFor(x => x.User.Address.Country, new { @class = "Profile_input w-50", required = "required" })
+                                <i class="bi bi-vector-pen editIcon"></i>
+                            </div>
+
+                            <div class=" mb-1 w-100 d-flex align-items-center">
+                                <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
+                                @Html.TextBoxFor(x => x.User.Address.City, new { @class = "Profile_input w-50", required = "required" })
+                                <i class="bi bi-vector-pen editIcon"></i>
+                            </div>
+
+
+                            <div class=" mb-2 w-100 d-flex align-items-center">
+                                <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
+                                @Html.TextBoxFor(x => x.User.Address.Street, new { @class = "Profile_input w-50", required = "required" })
+                                <i class="bi bi-vector-pen editIcon"></i>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div class=" mb-2 w-100 d-flex align-items-center">
+                                <div class="me-2 mb-1 text-primary"><i class="bi bi-send-fill fs-5 pe-2"></i><b>Email:</b></div>
+                                @Html.TextBoxFor(x => x.User.Email, new { @class = "Profile_input w-50", required = "required" })
+                                <i class="bi bi-vector-pen editIcon"></i>
+                            </div>
+                            <div class=" mb-2 w-100 d-flex align-items-center">
+                                <div class="me-2 mb-1 text-primary"><i class="bi bi-telephone-fill fs-5 pe-2"></i><b>Numara:</b></div>
+                                @Html.TextBoxFor(x => x.User.Phone, new { @class = "Profile_input w-50", required = "required" })
+                                <i class="bi bi-vector-pen editIcon"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                    <input class="btn btn-primary p-2 bg-gradient" type="submit" value="Bilgilerinizi düzenleyin" />
+                }
+            }
+            else
+            {
+
+                <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
+
+                <div class="d-flex">
+                    <div class="mb-3 d-flex flex-column">
+                        <div class=" mb-1 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
+                            <div class="Profile_input"> @Model.User.Address.Country </div>
+
+
+                        </div>
+
+                        <div class=" mb-1 w-100 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Şehri:</b></div>
+                            <div class="Profile_input"> @Model.User.Address.City </div>
+
+                        </div>
+
+
+                        <div class=" mb-2 w-100 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Sokak:</b></div>
+                            <div class="Profile_input"> @Model.User.Address.Street </div>
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class=" mb-1 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-send-fill fs-5 pe-2"></i><b>Email:</b></div>
+                            <div class="Profile_input"> @Model.User.Email </div>
+
+
+                        </div>
+                        <div class=" mb-1 d-flex align-items-center">
+                            <div class="me-2 mb-1 text-primary"><i class="bi bi-telephone-fill fs-5 pe-2"></i><b>Numara:</b></div>
+                            <div class="Profile_input"> @Model.User.Phone </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+        </div>
+    </div>
+
+    <div class="homeAnimation res-box card-pricing bg-primary text-white w-100 bg-gradient shadow me-3">
+
+        @if (currentUser != null && currentUser.IsTeacher == false || currentUser.IsAdmin == true)
+        {
+            <h4 class="pb-2 fw-bold">Rezervasyonlar</h4>
+
+            if (currentUser.Id == Model.User.Id || currentUser.IsAdmin == true)
+            {
+                if (Model.Reservation.Count == 0)
+                {
+                    <p class="badge text-bg-secondary fs-5">
+                        <i class="bi bi-exclamation-square-fill"></i>
+                        Şu anda rezervasyon yok
+                    </p>
+                }
+                foreach (var r in Model.Reservation)
+                {
+                    if (r.Status != "Reddedildi")
+                    {
+                        <div>
+                            <div class="homeAnimation res-boxs mb-2 text-dark card p-3 mt-3">
+                                <p class="border-bottom">
+                                    <i class="bi bi-person-fill fs-5 pe-1"></i>
+                                    <b>Öğretmen Adı :</b> <span class="badge bg-primary text-wrap">@r.Teacher.User.Name</span>
+                                </p>
+                                <p class="border-bottom">
+                                    <i class="bi bi-book-fill fs-5 pe-1"></i>
+
+                                        <b>Ders adı: </b><span class="badge bg-primary">@r.Subject.SubjectName</span>
+                                    
+
+                                </p>
+                                <p class="border-bottom">
+                                    <i class="bi bi-calendar-date-fill fs-5 pe-2"></i>
+                                    <b>Tarih: </b><span class="badge bg-primary">@r.Time</span>
+                                </p>
+                                <p class="border-bottom">
+                                    <i class="bi bi-hourglass-split fs-5 pe-2"></i>
+                                    <b>Durum: </b><span class="badge bg-primary">@r.Status</span>
+                                </p>
+                                <p class="border-bottom">
+                                    <i class="bi bi-geo-alt-fill fs-5 pe-2"></i>
+                                    <b>Öğretmen adresi: </b><span class="badge bg-primary text-wrap">@r.Teacher.User.Address.Country |@r.Teacher.User.Address.City | @r.Teacher.User.Address.Street</span>
+                                </p>
+                              
+
+                            </div>
+                        </div>
+                    }
+
+                }
+            }
+        }
+        else
+        {
+            <h5 class="pb-2 fw-bold">Rezervasyon</h5>
+            using (Html.BeginForm("Reservation", "Profile", FormMethod.Post))
+            {
+                <input type="date" name="date" value="date" required />
+
+                <input type="hidden" name="id" value="@Model.User.Id" />
+                <input type="hidden" name="studentId" value="@currentUser.Id" />
+
+                <input type="time" name="time" value="time" required />
+
+
+                <hr />
+
+
+                <div class="m-4">
+                    <input class="btn btn-light text-primary " type="reset" value="reset" />
+                    <input class="btn btn-light text-primary " type="submit" value="submit" />
+                    <p class="d-block btn @ViewBag.submited_color text-light mt-3">@ViewBag.submited</p>
+                </div>
+            }
+            foreach (var r in Model.Reservation)
+            {
+                if (r.Student.User.Id == currentUser.Id)
+                {
+                    <div>
+                        <div class="homeAnimation res-boxs mb-2 text-dark card p-3">
+                            <p class="border-bottom">
+                                <i class="bi bi-person-fill fs-5 pe-1"></i>
+                                <b>Öğretmen Adı :</b> <span class="badge bg-primary text-wrap">@r.Student.User.Name</span>
+                            </p>
+                            <p class="border-bottom">
+                                <i class="bi bi-book-fill fs-5 pe-1"></i>
+    
+                                    <b>Ders adı: </b><span class="badge bg-primary">@r.Subject.SubjectName</span>
+
+
+                            </p>
+                            <p class="border-bottom">
+                                <i class="bi bi-calendar-date-fill fs-5 pe-2"></i>
+                                <b>Tarih: </b><span class="badge bg-primary">@r.Time</span>
+                            </p>
+                            <p class="border-bottom">
+                                <i class="bi bi-hourglass-split fs-5 pe-2"></i>
+                                <b>Durum: </b><span class="badge bg-primary">@r.Status</span>
+                            </p>
+                            <p class="border-bottom">
+                                <i class="bi bi-geo-alt-fill fs-5 pe-2"></i>
+                                <b>Öğretmen adresi: </b><span class="badge bg-primary text-wrap">@r.Teacher.User.Address.Country |@r.Teacher.User.Address.City | @r.Teacher.User.Address.Street</span>
+                            </p>
+
+
+                        </div>
+                    </div>
+                }
+
+            }
+
+
+        }
+
+    </div>
+</main>

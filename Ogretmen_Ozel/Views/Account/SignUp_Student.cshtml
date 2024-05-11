@@ -8,10 +8,10 @@
     <title>SignUp_Teacher</title>
 </head>
 <body>
-    <div class="d-flex flex-column justify-content-center mb-5">
-        <h1 class="mb-5 text-primary fw-bold">Öğrenci olarak yeni bir hesap açın</h1>
+    <div class="animation d-flex flex-column justify-content-center container mb-5">
+        <h1 class="m-5 ms-2 text-primary fw-bold">Öğrenci olarak yeni bir hesap açın</h1>
         <div class="signup_container d-flex border-1 p-3 bg-primary rounded bg-gradient text-light">
-            @using (Html.BeginForm("SignUp_Student", "Account", FormMethod.Post, new { @class = "d-flex justify-content-center w-50" }))
+            @using (Html.BeginForm("SignUp_Student", "Account", FormMethod.Post, new { @class = "d-flex justify-content-center w-50", enctype = "multipart/form-data" }))
             {
                 <div class="row p-2 w-75 justify-content-center">
                     @if (ViewBag.resultS != null)
@@ -48,8 +48,10 @@
                     <div class="m-2 row">
                         @Html.TextBoxFor(model => model.Address.Street, new { type = "text", @class = "form-control", placeholder = "Sokak" })
                     </div>
+                    <input type="file" name="imageFile" class="m-2" />
+                    <div>@ViewBag.ex</div>
                     <input class="btn btn-light text-primary ms-3 mt-2 w-50 input_sginUp" type="submit" value="Gönder" />
-                    <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn")</div>
+                    <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn", null, new { @class = "text-light" })|@Html.ActionLink("Öğretmen", "SignUp_Teacher", null, new { @class = "text-light" })</div>
                 </div>
 
 

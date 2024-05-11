@@ -8,12 +8,12 @@
     <title>SignUp_Teacher</title>
 </head>
 <body>
-    <div class="d-flex flex-column justify-content-center mb-5">
-            <h1 class="mb-5 text-primary fw-bold">Öğretmen olarak yeni bir hesap açın</h1>
+    <div class="animation d-flex flex-column justify-content-center container mb-5">
+            <h1 class="m-5 ms-2 text-primary fw-bold">Öğretmen olarak yeni bir hesap açın</h1>
         <div class="signup_container d-flex border-1 p-3 bg-primary rounded bg-gradient text-light">
-            @using (Html.BeginForm("SignUp_Teacher", "Account",FormMethod.Post, new {@class="d-flex justify-content-center w-50"}))
+            @using (Html.BeginForm("SignUp_Teacher", "Account",FormMethod.Post, new {@class="d-flex justify-content-center w-50",enctype = "multipart/form-data"}))
             {
-                <div class="row p-2 w-75">
+                <div class="row p-2 w-75 justify-content-center">
                     @if (ViewBag.resultT != null)
                     {
                         <div class="alert alert-danger d-flex align-items-center">
@@ -39,7 +39,7 @@
                     <div class="m-2 row">
                         @Html.TextBoxFor(model => model.User.Phone, new { type = "text", @class = "form-control", placeholder = "Numara" })
                     </div>
-                    <div class="m-2 col">
+                    <div class="m-2 ms-0 col">
                         @Html.TextBoxFor(model => model.Address.Country, new { type = "text", @class = "form-control", placeholder = "Ülke" })
                     </div>
                     <div class="m-2 col pe-0">
@@ -49,12 +49,15 @@
                         @Html.TextBoxFor(model => model.Address.Street, new { type = "text", @class = "form-control", placeholder = "Sokak" })
                     </div>
 
-                    <div class="col d-flex justify-content-between mt-2">
-                        @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Dersi Seç", new { @class = "form-control text-secondary bg-gradient w-50 text-center ms-2" })
+                    <div class="col d-flex justify-content-between mt-2 mb-2">
+                        @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Dersi Seç", new { @class = "form-control text-secondary bg-gradient w-50 text-center ms-0" })
 
-                        <input class="btn btn-light text-primary ms-3 input_sginUp" type="submit" value="Gönder" />
+
+                        <input type="file" name="imageFile" accept="image/*" class="ms-5" />
+
                     </div>
-                    <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn")</div>
+                        <input class="btn btn-light text-primary w-50 input_sginUp" type="submit" value="Gönder" />
+                    <div class="link_to_login row fw-lighter d-inline-block ms-2">Zaten bir hesabım var @Html.ActionLink("Giriş yap", "LogIn",null , new {@class="text-light"})</div>
 
                 </div>
 

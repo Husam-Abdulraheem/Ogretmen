@@ -8,13 +8,17 @@ namespace Ogretmen_Ozel.Models
     public class Reservation
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ReservationId { get; set; }
+        public int Id { get; set; }
 
         //public Date Date { get; set; }
         public DateTime Time { get; set; }
         public virtual Teacher Teacher { get; set; }
         public virtual Student Student { get; set; }
         public virtual Subject Subject { get; set; }
-
+        public string Status { get; set; }
+        //public static implicit operator List<object>(Reservation v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

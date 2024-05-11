@@ -658,7 +658,7 @@ progress {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
+    max-width: 1240px;
   }
 }
 @media (min-width: 1400px) {
@@ -8173,7 +8173,10 @@ textarea.form-control-lg {
 .text-opacity-100 {
   --bs-text-opacity: 1;
 }
-
+.bg-lightPrimary {
+    --bs-bg-opacity: 1;
+    background-color: #c9c0fc68 !important;
+}
 .bg-primary {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;

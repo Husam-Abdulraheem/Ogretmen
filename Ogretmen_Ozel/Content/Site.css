@@ -27,20 +27,68 @@ textarea {
 }
 .profile {
     box-shadow: 0 2px 6px rgba(100, 95, 136, 0.25);
-    
+    min-width: 750px;
     
 }
+.tpImg{
+    width:100% !important;
+}
+.sidebar {
+    padding-top: 80px !important;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    transition: 0.3s linear;
+    height: 100vh;
+}
+
+    .sidebar.fixed {
+        position: fixed;
+        bottom: auto;
+        height: auto;
+    }
+
+.footer-reached {
+    position: absolute; 
+    bottom: 150px; 
+    top: -300px;
+}
+
+
+.hiddenDiv{
+    width: 300px;
+}
+.responsive-table > Table > thead > tr td {
+    background-color: #c9c0fc68;
+}
+.responsive-table > Table > thead > tr td:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.responsive-table > Table > thead > tr td:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.Newcard-pricing {
+    width: 60vw;
+    padding: 20px;
+    border-radius: 5px;
+    text-align:center;
+}
+
+
 @media screen and (max-width: 992px) {
     .body-content{
-        display:flex;
-        justify-content:center;
-    }
-    .profile {
-        width: 360px;
-    }
-    .res-box{
-        margin-top:50px;
-    }
+    display:flex;
+    justify-content:center;
+}
+.profile {
+    width: 360px;
+}
+.res-box{
+    margin-top:50px;
+}
 }
 @media screen and (min-width: 1124px) {
     .profile {
@@ -62,13 +110,26 @@ textarea {
     border-radius: 50px;
     box-shadow: 0 2px 6px rgba(100, 95, 136, 0.25);
 }
-
+.imageP{
+    max-width:50px;
+    margin-left:20px;
+}
+.profileInImg {
+    max-width: 100px;
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    border-radius: 50%;
+    border: 10px solid white;
+}
 .profileImage {
-    font-size:40px;
-    color:var(--primary);
+    font-size: 40px;
+    color: var(--primary);
     width: 60px;
     margin-top: 10px;
-    margin-left:20px;
+    margin-left: 20px;
+    padding: 7px 7px;
 }
 .profileImageL {
     font-size: 70px;
@@ -137,4 +198,66 @@ textarea {
 .link_to_login {
     padding-top: 5PX;
     font-size: 13px;
+}
+.hoverScale:hover {
+    transition: 0.8ms linear;
+    transform: scale(1.03, 1.03);
+}
+
+.editSubjects {
+    background-color: transparent;
+    border: none;
+    width: 22px;
+    height:22px;
+    position:absolute;
+    top: 0;
+    left:2px;
+    
+}
+.iconsEditSubjects{
+    position:relative;
+
+}
+
+@keyframes swapTransition {
+    from{
+        opacity: 0;
+        transform:translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes reSwapTransition {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes sharinkTranstion {
+    from {
+        opacity: 0;
+        transform:scale(0.5,0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+.homeAnimation {
+    animation: sharinkTranstion 0.75s;
+}
+.animation {
+    animation: swapTransition 0.75s;
+}
+.animationLogin {
+    animation: reSwapTransition 0.75s;
 }

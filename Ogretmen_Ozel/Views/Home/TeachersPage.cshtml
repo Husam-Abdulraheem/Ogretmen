@@ -4,53 +4,75 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
-    var dropdownListItems = new List<SelectListItem>
-{
-        new SelectListItem { Text = "-- Filtre --" },
-        new SelectListItem { Text = "Ülke",  Value = "Country" },
-        new SelectListItem { Text = "Şehir", Value = "City" },
-        new SelectListItem { Text = "Sokak", Value = "Street" }
-    };
+        var dropdownListItems = new List<SelectListItem>
+        {
+            new SelectListItem { Text = "Tüm Adresler" ,Value=""},
+            new SelectListItem { Text = "Ülke", Value = "Country" },
+            new SelectListItem { Text = "Şehir", Value = "City" },
+            new SelectListItem { Text = "Sokak", Value = "Street" }
+        };      
 }
-<head>
 
-</head>
-<h2>TeachersPage</h2>
-
-
-<div class="page-section pt-0">
+<div class="page-section pt-0 ">
     <div class="container">
 
         <hr />
-        @using (Html.BeginForm("TeachersPage", "Home",FormMethod.Get, new {@class="d-flex"})) {
-        @Html.DropDownList("address", dropdownListItems, new { @class = " form-select" })
-        <input class="btn btn-primary ms-3" type="submit" value="Filtre" />
-        }
-            <div class="row my-5">
+            @using (Html.BeginForm("TeachersPage", "Home", FormMethod.Get, new { @class = "d-flex justify-content-start gap-2 ms-5" }))
+            {
+
+               <div>
+            @Html.DropDownList("address", dropdownListItems, new { @class = " form-select" })
+               </div>
+               <div>
+            @Html.DropDownList("id", (IEnumerable<SelectListItem>)ViewData["AllSubject"], "Dersi Seç", new { @class = "form-control text-secondary bg-gradient  ms-2" })
+               </div>
+
+                <input class="btn btn-primary ms-3" type="submit" value="Filtre" />
+
+            }
+    <div class="row my-5">
         @foreach (var t in Model)
         {
-                <div class="col-lg-4 py-3">
+            if (t.Subject != null)
+            {
+                <div class="homeAnimation col-lg-4 py-3 hoverScale">
                     <div class="card-blog">
-                        <div class="header">
-                            <div class="post-thumb">
-                                <img src="../assets/img/blog/blog-1.jpg" alt="">
+                        <a href="@Url.Action("TeacherProfile", "Profile",new { userId = t.User.Id })">
+                            <div class="header">
+                                <div class="post-thumb">
+                                    @if (t.User.Image != null)
+                                    {
+
+                                        <img src="@t.User.Image" class="tpImg" alt="profile img">
+
+                                    }
+                                    else
+                                    {
+                                        <img src="" alt="">
+                                    }
+
+                                 
+                                </div>
                             </div>
-                        </div>
-                        <div class="body">
-                            <h5 class="post-title">
-                                @Html.ActionLink(t.User.Name + " " + t.User.LastName, "Profile", "Profile", new { userId = t.Id }, null)
-                                <span class="post-date badge bg-primary">@t.Subject.SubjectName</span>
-                            </h5>
+                            <div class="body">
+                                <div class="post-title">
+                                    <h5>@t.User.Name @t.User.LastName <span class="post-date badge bg-primary">@t.Subject.SubjectName</span></h5>
 
-                            
-                            <div class="post-date badge bg-secondary">@t.User.Address.Country</div>
-                            <span class="post-date badge bg-secondary">@t.User.Address.City</span>
+                                </div>
 
-                        </div>
+
+                                <div class="post-date badge bg-secondary">@t.User.Address.Country</div>
+                                <span class="post-date badge bg-secondary">@t.User.Address.City</span>
+
+                            </div>
+                        </a>
                     </div>
                 </div>
+
+            }
+
         }
-            </div>
+    </div>
 
     </div>
 </div>
