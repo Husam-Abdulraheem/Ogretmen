@@ -43,7 +43,9 @@
                 <div class="me-5 align-items-start">
                     @if (@currentUser.Image != null)
                     {
-                        <img src="@currentUser.Image" class="imageP profileImage" alt="Profile img" />
+                        <div class="container_img">
+                        <img src="@currentUser.Image" class="imageP" alt="Profile img" />
+                        </div>
                     }
                     else
                     {
@@ -54,7 +56,7 @@
 
                     @if (currentUser != null && currentUser.IsTeacher == true)
                     {
-                        <li class="profileA text-dark">@Html.ActionLink("Profile", "TeacherProfile", "Profile", new { userId = currentUser.Id }, null)</li>
+                        <li class="profileA text-dark">@Html.ActionLink("Profil", "TeacherProfile", "Profile", new { userId = currentUser.Id }, null)</li>
                     }
                     else if (currentUser != null && currentUser.IsAdmin)
                     {
@@ -69,7 +71,7 @@
                         <li class="profileA text-dark">@Html.ActionLink("Profile", "StudentProfile", "Profile", new { userId = currentUser.Id }, null)</li>
                     }
 
-                    <li class="profileA text-dark">@Html.ActionLink("Logout", "logout", "Account")</li>
+                    <li class="profileA text-dark">@Html.ActionLink("Çıkış Yap", "logout", "Account")</li>
                 </ul>
                 </div>
             }
@@ -102,17 +104,17 @@
                             @Html.ActionLink("Öğretmenler", "TeachersPage", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("İletişim", "Index", "Home", null, new { @class = "nav-link", href = "#Iletisim" })
+                            @Html.ActionLink("Hakkimizda", "Index", "Home", null, new { @class = "nav-link", href = "#Hakkimizda" })
                         </li>
                         </ul>
                         @if (User.Identity.IsAuthenticated)
                         {
                             if (currentUser != null && currentUser.IsAdmin == true)
                             {
-                                <li class="nav nav-item">
+                                <div class="nav nav-item">
                                     @Html.ActionLink("Kontrol Paneli", "AdminPage", "Admin", null, new { @class = "nav-link bg-primary text-light rounded" })
 
-                                </li>
+                                </div>
                             }
                         }
                     

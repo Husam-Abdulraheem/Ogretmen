@@ -11,7 +11,7 @@
     <div class="animation d-flex flex-column justify-content-center container mb-5">
         <h1 class="m-5 ms-2 text-primary fw-bold">Öğrenci olarak yeni bir hesap açın</h1>
         <div class="signup_container d-flex border-1 p-3 bg-primary rounded bg-gradient text-light">
-            @using (Html.BeginForm("SignUp_Student", "Account", FormMethod.Post, new { @class = "d-flex justify-content-center w-50", enctype = "multipart/form-data" }))
+            @using (Html.BeginForm("SignUp_Student", "Account", FormMethod.Post, new { @class = "formSignup d-flex justify-content-center w-50", enctype = "multipart/form-data" }))
             {
                 <div class="row p-2 w-75 justify-content-center">
                     @if (ViewBag.resultS != null)
@@ -23,10 +23,10 @@
                             </div>
                         </div>
                     }
-                    <div class="m-2 col p-2">
+                    <div class="m-2 col p-2 ms-1">
                         @Html.TextBoxFor(model => model.User.Name, new { type = "text", @class = "form-control", placeholder = "Ad" })
                     </div>
-                    <div class="m-2 col p-2 pe-0">
+                    <div class="m-2 col p-2 me-1 ">
                         @Html.TextBoxFor(model => model.User.LastName, new { type = "text", @class = "form-control", placeholder = "SoyAd" })
                     </div>
                     <div class="m-2 row">
@@ -48,6 +48,7 @@
                     <div class="m-2 row">
                         @Html.TextBoxFor(model => model.Address.Street, new { type = "text", @class = "form-control", placeholder = "Sokak" })
                     </div>
+                    <span>Fotoğraf Seçin</span>
                     <input type="file" name="imageFile" class="m-2" />
                     <div>@ViewBag.ex</div>
                     <input class="btn btn-light text-primary ms-3 mt-2 w-50 input_sginUp" type="submit" value="Gönder" />

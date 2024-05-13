@@ -18,11 +18,13 @@
 <head>
     <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
-<main class="container d-flex flex-lg-row align-items-start justify-content-lg-between flex-column">
-    <div class="profile homeAnimation card p-0">
+<main class="container d-flex flex-lg-row align-items-lg-start align-items-center justify-content-lg-around flex-column">
+    <div class="profileContent homeAnimation card p-0">
         @if (Model.User.Image != null)
         {
-            <img src="@Model.User.Image" class="profileInImg" alt="Profile img" />
+            <div class="profileInImgDiv">
+                <img src="@Model.User.Image" class="profileInImg" alt="Profile img" />
+            </div>
         }
         else
         {
@@ -40,7 +42,7 @@
 
 
                     <input type="hidden" name="userId" value="@Model.Id" />
-                    <div class="d-flex">
+                    <div class="d-xl-flex">
                         <div class="mb-3 d-flex flex-column">
                             <div class=" mb-1 w-100 d-flex align-items-center">
                                 <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
@@ -84,7 +86,7 @@
 
                 <h1 class="mb-0">@Model.User.Name @Model.User.LastName</h1>
 
-                <div class="d-flex">
+                <div class="d-xl-flex">
                     <div class="mb-3 d-flex flex-column">
                         <div class=" mb-1 d-flex align-items-center">
                             <div class="me-2 mb-1 text-primary"><i class="bi bi-globe-central-south-asia fs-5 pe-2"></i><b>Ülke:</b></div>
@@ -107,7 +109,7 @@
                         </div>
 
                     </div>
-                    <div>
+                    <div class="ms-xxl-5">
                         <div class=" mb-1 d-flex align-items-center">
                             <div class="me-2 mb-1 text-primary"><i class="bi bi-send-fill fs-5 pe-2"></i><b>Email:</b></div>
                             <div class="Profile_input"> @Model.User.Email </div>

@@ -184,14 +184,14 @@ ul {
     }
 
     .welcome .avatar {
-        width: 64px;
-        height: 64px;
+        width: 84px;
+        height: 84px;
         border: 2px solid white;
         border-radius: 50%;
         padding: 2px;
-        box-shadow: 0 0 5px #ddd;
-        margin-left: 20px;
-        margin-top: -32px;
+        box-shadow: 0 0 5px #252525b6;
+        margin-left: 30px;
+        margin-top: -42px;
     }
 
     .welcome .body {
@@ -349,12 +349,26 @@ ul {
 @media (max-width: 767px) {
     .latest-news .news-row {
         display: block;
+
     }
 
-        .latest-news .news-row .label {
-            margin: 10px auto;
-            width: fit-content;
-        }
+    .latest-news .news-row .label {
+        margin: 10px auto;
+        width: fit-content;
+    }
+}
+@media  (max-width: 530px) {
+    .latest-news .news-row {
+
+        flex-direction: column;
+        align-items:center;
+    }
+    .info {
+        margin:20px;
+    }
+    .editSujInput{
+        margin-left:40px;
+    }
 }
 /* End Latest News */
 /* Start Tasks */

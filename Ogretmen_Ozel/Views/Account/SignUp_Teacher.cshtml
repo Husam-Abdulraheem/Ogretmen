@@ -11,7 +11,7 @@
     <div class="animation d-flex flex-column justify-content-center container mb-5">
             <h1 class="m-5 ms-2 text-primary fw-bold">Öğretmen olarak yeni bir hesap açın</h1>
         <div class="signup_container d-flex border-1 p-3 bg-primary rounded bg-gradient text-light">
-            @using (Html.BeginForm("SignUp_Teacher", "Account",FormMethod.Post, new {@class="d-flex justify-content-center w-50",enctype = "multipart/form-data"}))
+            @using (Html.BeginForm("SignUp_Teacher", "Account",FormMethod.Post, new {@class= "formSignup d-flex justify-content-center w-50", enctype = "multipart/form-data"}))
             {
                 <div class="row p-2 w-75 justify-content-center">
                     @if (ViewBag.resultT != null)
@@ -23,10 +23,10 @@
                             </div>
                         </div>
                     }
-                    <div class="m-2 col p-2">
+                    <div class="m-2 col p-2 ms-1">
                         @Html.TextBoxFor(model => model.User.Name, new { type = "text", @class = "form-control", placeholder = "Ad" })
                     </div>
-                    <div class="m-2 col p-2 pe-0">
+                    <div class="m-2 col p-2 me-1">
                         @Html.TextBoxFor(model => model.User.LastName, new { type = "text", @class = "form-control", placeholder = "SoyAd" })
                     </div>
                     <div class="m-2 row">
@@ -52,8 +52,8 @@
                     <div class="col d-flex justify-content-between mt-2 mb-2">
                         @Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewData["Subject"], "Dersi Seç", new { @class = "form-control text-secondary bg-gradient w-50 text-center ms-0" })
 
-
-                        <input type="file" name="imageFile" accept="image/*" class="ms-5" />
+                        <span class="ms-5">fotoğraf seçin</span>
+                        <input type="file" name="imageFile" accept="image/*" class="ms-2" />
 
                     </div>
                         <input class="btn btn-light text-primary w-50 input_sginUp" type="submit" value="Gönder" />

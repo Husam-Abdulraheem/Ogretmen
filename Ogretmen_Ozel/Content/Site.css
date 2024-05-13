@@ -95,6 +95,21 @@ textarea {
         width: 670px;
     }
 }
+@media screen and (min-width: 1124px) {
+    .profileContent {
+        width: 670px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .profileContent {
+        width: 470px;
+    }
+}
+@media screen and (max-width: 998px){
+    .profileContent{
+        width: 400px;
+    }
+}
 
 .profilehead {
     background-color: var(--primary);
@@ -104,24 +119,42 @@ textarea {
     border-radius:5px 5px 0 0;
 }
 
+.imageP{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container_img {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+}
 .profileImage, .profileImageL {
-    
-    
     border-radius: 50px;
     box-shadow: 0 2px 6px rgba(100, 95, 136, 0.25);
 }
-.imageP{
-    max-width:50px;
-    margin-left:20px;
-}
-.profileInImg {
-    max-width: 100px;
+.profileInImgDiv {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
     background-color: white;
+    border: 5px solid white;
     position: absolute;
     top: 100px;
     left: 50px;
-    border-radius: 50%;
-    border: 10px solid white;
+}
+.profileInImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+
 }
 .profileImage {
     font-size: 40px;
@@ -261,6 +294,34 @@ textarea {
 .animationLogin {
     animation: reSwapTransition 0.75s;
 }
-.eErorr{
-    font-size:100px;
+
+@media screen and (max-width: 993px) {
+    .loginPage {
+        flex-direction: column-reverse;
+    }
+    .loginPage>img{
+        height: 250px;
+    }
+    .signup_container {
+        flex-direction: column;
+        width: auto !important;
+    }
+    .formSignup {
+        width: auto !important;
+    }
+}
+@media screen and (max-width: 570px) {
+    .signup_container img {
+        height: 250px !important;
+    }
+}
+@media screen and (min-width : 768px) and (max-width : 1199px) {
+    .hiddenDiv {
+        width: 700px;
+    }   
+}
+
+
+.eErorr {
+    font-size: 100px;
 }

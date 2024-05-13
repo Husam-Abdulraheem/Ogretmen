@@ -10,6 +10,7 @@ namespace Ogretmen_Ozel.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string SubjectName { get; set; }
+        [MaxLength(300)]
         public string SubjectDescription { get; set; }
 
         public string Image { get; set; }

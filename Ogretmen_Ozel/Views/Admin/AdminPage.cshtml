@@ -187,13 +187,15 @@
                                 <div class="info border-bottom w-50">
                                     <input type="hidden" value="@subj.Id" name="sId" />
 
-                                    @Html.TextBox("name", (string)subj.SubjectName, new { @class = "border-0 " })
+                                    @Html.TextBox("name", (string)subj.SubjectName, new { @class = "border-0 editSujInput" })
                                 </div>
-                                <i class="iconsEditSubjects bi bi-vector-pen text-warning fs-5 me-4">
-                                    <input type="submit" class="editSubjects " value=" " />
+                                <div>
+                                    <i class="iconsEditSubjects bi bi-vector-pen text-warning fs-5 me-4">
+                                        <input type="submit" class="editSubjects " value=" " />
+                                    </i>
 
-                                </i>
-                                @Html.ActionLink(" ", "DeleteSubject", "Admin", new { sId = subj.Id }, new { @class = "bi bi-trash-fill text-danger" })
+                                    @Html.ActionLink(" ", "DeleteSubject", "Admin", new { sId = subj.Id }, new { @class = "bi bi-trash-fill text-danger" })
+                                </div>
                             </div>
 
 
@@ -272,9 +274,16 @@
 
                                     <td>@s.User.Phone</td>
                                     <td>@s.User.IsAdmin</td>
-                                    <td>@s.Subject.SubjectName</td>
+                                    @if (s.Subject != null)
+                                    {
+                                        <td>@s.Subject.SubjectName</td>
+                                    }
+                                    else
+                                    {
+                                        <td>Yok</td>
+                                    }
                                     <td>@s.Reservations.Count</td>
-                                    <td>@s.User.Address.Country | @s.User.Address.City |                                @s.User.Address.Street</td>
+                                    <td>@s.User.Address.Country | @s.User.Address.City | @s.User.Address.Street</td>
                                     <td>
                                         @Html.ActionLink(" ", "DeleteTeacher", "Admin", new { sId = s.User.Id }, new { @class = "bi bi-trash-fill text-danger" })
                                     </td>
