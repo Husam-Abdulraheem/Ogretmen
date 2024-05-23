@@ -49,7 +49,7 @@
                     }
                     else
                     {
-                        <i class="bi bi-person-circle profileImage"></i>
+                        <i class="bi bi-person-circle container_img profileImage"></i>
                     }
 
                 <ul class="profileList ">
@@ -104,7 +104,7 @@
                             @Html.ActionLink("Öğretmenler", "TeachersPage", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Hakkimizda", "Index", "Home", null, new { @class = "nav-link", href = "#Hakkimizda" })
+                            @Html.ActionLink("Hakkımızda", "Index", "Home", null, new { @class = "nav-link", href = "#Hakkimizda" })
                         </li>
                         </ul>
                         @if (User.Identity.IsAuthenticated)
@@ -134,7 +134,7 @@
         <footer class="page-footer">
             <div class="container">
 
-                <h3 id="Hakkimizda" class="d-flex justify-content-center">Hakkimizda</h3>
+                <h3 id="Hakkimizda" class="d-flex justify-content-center">Hakkımızda</h3>
                 <p class="text-center">
 
                     Hoş geldiniz! Sitemize hoş geldiniz. Burada, her öğrencinin ihtiyaçlarına özel olarak tasarlanmış eğitim hizmetlerini sunmayı amaçlıyoruz. Bireysel eğitimin gücüne ve öğrenme yollarının kişisel seyrine olan olumlu etkisine inanıyoruz. Yenilikçi müfredatımız ve uzman öğretmen kadromuzla, öğrencilere akademik hedeflerine güvenle ve başarıyla ulaşmalarında yardımcı oluyoruz.
@@ -144,10 +144,10 @@
                 <hr />
                 <h3 id="Iletisim" class="d-flex justify-content-center">İletişim</h3>
                 <div class="social-media-button d-flex justify-content-center mt-5">
-                    <a href="#" class="me-4"><span class="bi bi-facebook"></span></a>
-                    <a href="#" class="me-4"><span class="bi bi-twitter-x"></span></a>
-                    <a href="#" class="me-4"><span class="bi bi-instagram"></span></a>
-                    <a href="#" class="me-4"><span class="bi bi-youtube"></span></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="me-4"><span class="bi bi-facebook"></span></a>
+                    <a href="https://twitter.com/" target="_blank" class="me-4"><span class="bi bi-twitter-x"></span></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="me-4"><span class="bi bi-instagram"></span></a>
+                    <a href="https://www.youtube.com/" target="_blank" class="me-4"><span class="bi bi-youtube"></span></a>
                 </div>
                 <p>&copy; @DateTime.Now.Year - Özel Öğretmen</p>
             </div>

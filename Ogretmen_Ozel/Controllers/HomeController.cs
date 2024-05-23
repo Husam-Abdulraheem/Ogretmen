@@ -1,7 +1,6 @@
 ﻿using Ogretmen_Ozel.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Ogretmen_Ozel.Controllers
@@ -13,13 +12,7 @@ namespace Ogretmen_Ozel.Controllers
         {
             List<Subject> listSubject = new List<Subject>();
             listSubject = db.SubjectTable.ToList();
-            if (!User.Identity.IsAuthenticated)
-            {
-                //HttpCookie isTeacher = new HttpCookie("IsTeacher", "false");
-                HttpCookie httpCookie = new HttpCookie("isAdmin", "");
-                HttpContext.Response.Cookies.Add(httpCookie);
 
-            }
             return View(listSubject);
         }
 

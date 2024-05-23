@@ -33,40 +33,26 @@
             <hr />
             <ul>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#İstatistikler">
-                        <i class="bi bi-pie-chart-fill fs-5 text-primary"></i>
-                        <span>İstatistikler</span>
-                    </a>
+                    @Html.ActionLink("İstatistikler", "AdminPage", null, new {@class= "active d-flex align-center rad-6 p-10 bi bi-pie-chart-fill fs-5 text-primary adminSideBar", href="#İstatistikler" })
+
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#hedefler">
-                        <i class="bi bi-graph-up-arrow fs-5 text-primary"></i>
-                        <span>Yıllık Hedefler</span>
-                    </a>
+                    @Html.ActionLink("Yıllık Hedefler", "AdminPage", null, new { @class = "active d-flex align-center c-black rad-6 p-10 bi bi-graph-up-arrow fs-5 text-primary adminSideBar", href = "#hedefler" })
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#ders">
-                        <i class="bi bi-file-earmark-plus-fill  fs-5 text-primary"></i>
-                        <span>Ders Ekle</span>
-                    </a>
+                    @Html.ActionLink("Ders Ekle", "AdminPage", null, new { @class = "active d-flex align-center rad-6 p-10 bi bi-file-earmark-plus-fill  fs-5 text-primary adminSideBar", href = "#ders" })
+
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#mevcut">
-                        <i class="bi bi-book-fill fs-5 text-primary"></i>
-                        <span>Mevcut Dersler</span>
-                    </a>
+                    @Html.ActionLink("Mevcut Dersler", "AdminPage", null, new { @class = "active d-flex align-center rad-6 p-10 bi bi-book-fill fs-5 text-primary adminSideBar", href = "#mevcut" })
+
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#Öğrenci">
-                        <i class="bi bi-backpack-fill fs-5 text-primary"></i>
-                        <span>Öğrenci</span>
-                    </a>
+                    @Html.ActionLink("Öğrenci", "AdminPage", null, new { @class = "active d-flex align-center rad-6 p-10 bi bi-backpack-fill fs-5 text-primary adminSideBar", href = "#Öğrenci" })
                 </li>
                 <li>
-                    <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="#Öğretmen">
-                        <i class="bi bi-duffle-fill fs-5 text-primary"></i>
-                        <span>Öğretmen</span>
-                    </a>
+                    @Html.ActionLink("Öğretmen", "AdminPage", null, new { @class = "active d-flex align-center rad-6 p-10 bi bi-duffle-fill fs-5 text-primary adminSideBar", href = "#Öğretmen" })
+
                 </li>
             </ul>
         </div>
@@ -74,7 +60,7 @@
             <h1 class="p-relative text-primary">Kontrol Paneli</h1>
             <div class="wrapper d-grid gap-20 text-primary">
                 <!-- Start Welcome Widget -->
-                <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
+                <div class="homeAnimation welcome bg-white rad-10 txt-c-mobile block-mobile">
                     <div class="intro p-20 d-flex space-between bg-primary bg-gradient">
                         <div>
                             <h2 class="m-5 ms-0 text-light">Merhaba</h2>
@@ -216,7 +202,6 @@
                                 <td>Ad Soyad</td>
                                 <td>Email</td>
                                 <td>Telefon Numarası</td>
-                                <td>Yönetici</td>
                                 <td>Adres</td>
                                 <td>Silmek</td>
                             </tr>
@@ -227,12 +212,10 @@
                                 if (s.User.IsAdmin == false)
                                 {
                                     <tr>
-                                        <td>@Html.ActionLink((string)s.User.Id.ToString(), "StudentProfile", "Profile", new { userId = s.User.Id }, new {@class= "text-light bg-primary p-1 ps-2 pe-2 rounded" })</td>
-                                        <td>@s.User.Name</td>
+                                        <td>@Html.ActionLink((string)s.User.Id.ToString(), "StudentProfile", "Profile", new { userId = s.User.Id }, new { @class = "text-light bg-primary p-1 ps-2 pe-2 rounded" })</td>
+                                        <td>@s.User.Name @s.User.LastName</td>
                                         <td>@s.User.Email</td>
-
                                         <td>@s.User.Phone</td>
-                                        <td>@s.User.IsAdmin</td>
                                         <td>@s.User.Address.Country | @s.User.Address.City |                                @s.User.Address.Street</td>
                                         <td>
                                             @Html.ActionLink(" ", "DeleteStudent", "Admin", new { sId = s.User.Id }, new { @class = "bi bi-trash-fill text-danger" })
@@ -257,7 +240,6 @@
                                 <td>Ad Soyad</td>
                                 <td>Email</td>
                                 <td>Telefon Numarası</td>
-                                <td>Yönetici</td>
                                 <td>Ders</td>
                                 <td>Rezervasyon sayısı</td>
                                 <td>Adres</td>
@@ -267,13 +249,14 @@
                         <tbody>
                             @foreach (var s in ViewBag.teachers)
                             {
+                                if (s.User.IsAdmin == false)
+                                {
                                 <tr>
                                     <td>@Html.ActionLink((string)s.User.Id.ToString(), "TeacherProfile", "Profile", new { userId = s.User.Id }, new { @class = "text-light bg-primary p-1 ps-2 pe-2 rounded" })</td>
-                                    <td>@s.User.Name</td>
+                                    <td>@s.User.Name @s.User.LastName</td>
                                     <td>@s.User.Email</td>
 
                                     <td>@s.User.Phone</td>
-                                    <td>@s.User.IsAdmin</td>
                                     @if (s.Subject != null)
                                     {
                                         <td>@s.Subject.SubjectName</td>
@@ -288,6 +271,7 @@
                                         @Html.ActionLink(" ", "DeleteTeacher", "Admin", new { sId = s.User.Id }, new { @class = "bi bi-trash-fill text-danger" })
                                     </td>
                                 </tr>
+                                }
                             }
 
                         </tbody>

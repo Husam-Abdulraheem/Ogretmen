@@ -20,7 +20,6 @@ public class AccountController : Controller
 
             return RedirectToAction("Index", "Home");
         }
-        //string userLogin = se
         return View();
     }
 
@@ -143,12 +142,16 @@ public class AccountController : Controller
     }
 
 
+
+
     [HttpGet]
     public ActionResult SignUp_Student()
     {
 
         return View();
     }
+
+
 
     [HttpPost]
     public ActionResult SignUp_Student(StudentSignUp studentSignUp, HttpPostedFileBase imageFile)

@@ -141,12 +141,10 @@ namespace Ogretmen_Ozel.Controllers
                 }
 
             }
-            //else
-            //{
+
             TempData["submited"] = "Geçmişte Rezervasyon Yapamazsınız";
             TempData["submited_color"] = "bg-danger";
             return RedirectToAction("TeacherProfile", "Profile", new { userId = id });
-            //}
 
         }
 
