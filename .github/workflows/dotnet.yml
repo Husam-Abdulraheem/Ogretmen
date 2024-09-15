@@ -17,6 +17,6 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '4.8.x'  # Adjust this to match your project's target framework
+        dotnet-version: '4.8'  # Adjust this to match your project's target framework
     - name: Build with MSBuild
       run: msbuild Ogretmen_Ozel.sln
