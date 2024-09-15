@@ -14,9 +14,5 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '4.8'  # Adjust this to match your project's target framework
     - name: Build with MSBuild
       run: msbuild Ogretmen_Ozel.sln
